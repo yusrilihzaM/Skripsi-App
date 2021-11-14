@@ -1,7 +1,8 @@
-package com.yusril.skripsi_app
+package com.yusril.skripsi_app.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.yusril.skripsi_app.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

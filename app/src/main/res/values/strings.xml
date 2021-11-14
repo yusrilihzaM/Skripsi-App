@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Skripsi-App</string>
+    <string name="peramalan">Peramalan</string>
+    <string name="aplikasi">Aplikasi</string>
+    <string name="pengunjung_wisatawan">Pengunjung Wisatawan</string>
+    <string name="sistem_informasi">Sistem Informasi</string>
+    <string name="universitas_trunojoyo">Universitas Trunojoyo Madura</string>
 </resources>
