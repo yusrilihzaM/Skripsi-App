@@ -11,4 +11,7 @@
     <color name="green">#4CD137</color>
     <color name="violet">#8C7AE6</color>
     <color name="blue">#407BFF</color>
+    <color name="yellow">#F1C40F</color>
+    <color name="silver">#bdc3c7</color>
+    <color name="white_300">#F5F5F5</color>
 </resources>

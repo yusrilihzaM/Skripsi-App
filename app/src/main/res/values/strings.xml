@@ -5,4 +5,22 @@
     <string name="pengunjung_wisatawan">Pengunjung Wisatawan</string>
     <string name="sistem_informasi">Sistem Informasi</string>
     <string name="universitas_trunojoyo">Universitas Trunojoyo Madura</string>
+    <string name="beranda">Beranda</string>
+    <string name="akun">Akun</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="hi_selamat_datang">Selamat Datang</string>
+    <string name="bg_title">bg title</string>
+    <string name="ic_hello">ic_hello</string>
+    <string name="title">Aplikasi ini dibuat\nuntuk memenuhi\ntugas akhir</string>
+    <string name="menu_data">Data Wisatawan</string>
+    <string-array name="data_title_menu">
+        <item>@string/menu_data</item>
+
+    </string-array>
+
+    <array name="data_ic_menu">
+        <item>@drawable/ic_data_pengunjung</item>
+
+    </array>
 </resources>

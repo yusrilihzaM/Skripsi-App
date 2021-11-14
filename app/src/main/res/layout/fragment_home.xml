@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.fragment.HomeFragment">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content">
+
+      <ImageView
+          android:id="@+id/bg_bottom"
+          android:layout_width="match_parent"
+          android:layout_height="420dp"
+          android:layout_marginTop="@dimen/size_8"
+          android:scaleType="fitXY"
+          android:src="@drawable/ic_splash"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/rv_menu"
+          app:layout_constraintVertical_bias="1.0" />
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/rv_menu"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="@dimen/size_16"
+          app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+          android:layout_marginLeft="@dimen/size_16"
+          android:layout_marginRight="@dimen/size_16"
+          tools:listitem="@layout/item_menu"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/imageView"
+          app:spanCount="3" />
+      <TextView
+          android:id="@+id/hi"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/size_18"
+
+          android:fontFamily="@font/poppins_medium"
+          android:text="@string/hi_selamat_datang"
+          android:textColor="@color/black"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toTopOf="parent" />
+      <ImageView
+          android:id="@+id/card"
+          android:layout_width="match_parent"
+          android:layout_height="120dp"
+          android:layout_margin="@dimen/size_16"
+          android:contentDescription="@string/bg_title"
+          android:src="@drawable/bg_title"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@+id/hi" />
+      <ImageView
+          android:id="@+id/imageView"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:layout_margin="@dimen/size_16"
+          android:layout_marginEnd="12dp"
+          android:contentDescription="@string/ic_hello"
+          android:src="@drawable/ic_hello"
+          app:layout_constraintBottom_toBottomOf="@+id/card"
+          app:layout_constraintEnd_toEndOf="@+id/card"
+          app:layout_constraintTop_toTopOf="@+id/card"
+          app:layout_constraintVertical_bias="0.612" />
+      <TextView
+          android:id="@+id/textView6"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="@string/title"
+          android:layout_margin="@dimen/size_32"
+          android:textColor="@color/black"
+          android:lineSpacingExtra="5dp"
+          app:layout_constraintBottom_toBottomOf="@+id/card"
+          app:layout_constraintStart_toStartOf="@+id/card"
+          app:layout_constraintTop_toTopOf="@+id/card" />
+
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

@@ -1,0 +1,15 @@
+<!-- bottom_menu.xml -->
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/home"
+        android:icon="@drawable/ic_home"
+        android:title="@string/beranda"
+        app:cnb_iconColor="@color/yellow"/>
+
+    <item
+        android:id="@+id/akun"
+        android:icon="@drawable/ic_account"
+        android:title="@string/akun"
+        app:cnb_iconColor="@color/green" />
+</menu>
