@@ -1,0 +1,2 @@
+rootProject.name = "Skripsi-APp"
+include ':app'
