@@ -14,13 +14,30 @@
     <string name="ic_hello">ic_hello</string>
     <string name="title">Aplikasi ini dibuat\nuntuk memenuhi\ntugas akhir</string>
     <string name="menu_data">Data Wisatawan</string>
+    <string name="place_data">Data Tempat Wisata</string>
+    <string name="data_tempat_wisata">Data Tempat Wisata</string>
+    <string name="tambah_data">Tambah data</string>
     <string-array name="data_title_menu">
         <item>@string/menu_data</item>
-
+        <item>@string/place_data</item>
+        <item>@string/menu_data</item>
+        <item>@string/menu_data</item>
+        <item>@string/menu_data</item>
+        <item>@string/menu_data</item>
+        <item>@string/menu_data</item>
+        <item>@string/menu_data</item>
+        <item>@string/menu_data</item>
     </string-array>
 
     <array name="data_ic_menu">
         <item>@drawable/ic_data_pengunjung</item>
-
+        <item>@drawable/ic_tempat_wisata</item>
+        <item>@drawable/ic_data_pengunjung</item>
+        <item>@drawable/ic_data_pengunjung</item>
+        <item>@drawable/ic_data_pengunjung</item>
+        <item>@drawable/ic_data_pengunjung</item>
+        <item>@drawable/ic_data_pengunjung</item>
+        <item>@drawable/ic_data_pengunjung</item>
+        <item>@drawable/ic_data_pengunjung</item>
     </array>
 </resources>

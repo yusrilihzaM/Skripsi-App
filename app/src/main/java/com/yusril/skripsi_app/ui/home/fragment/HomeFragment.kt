@@ -15,6 +15,7 @@ import com.yusril.skripsi_app.R
 import com.yusril.skripsi_app.adapter.HomeListAdapter
 import com.yusril.skripsi_app.databinding.FragmentHomeBinding
 import com.yusril.skripsi_app.entity.Menu
+import com.yusril.skripsi_app.ui.TouristDataType.TouristDataTypeActivity
 
 
 class HomeFragment : Fragment() {
@@ -47,21 +48,25 @@ class HomeFragment : Fragment() {
         homeListAdapter = HomeListAdapter(list)
         binding.rvMenu.adapter=homeListAdapter
 
-//        homeListAdapter.setOnItemClickCallback(object :HomeListAdapter.OnItemClickCallback{
-//            override fun onItemClicked(data: Menu) {
-//                val intent: Intent
-//                when(data.title){
-//                    getString(R.string.menu_data)->{
-//                        Toast.makeText(activity, "Menu Data Pengunjung", Toast.LENGTH_SHORT).show()
-////                        intent= Intent(context, AdminNewsActivity::class.java)
-////                        startActivity(intent)
-////                        activity?.finish()
-//                    }
-//
-//
-//                }
-//            }
-//        })
+        homeListAdapter.setOnItemClickCallback(object :HomeListAdapter.OnItemClickCallback{
+            override fun onItemClicked(data: Menu) {
+                val intent: Intent
+                when(data.title){
+                    getString(R.string.menu_data)->{
+                        Toast.makeText(activity, "Menu Data Pengunjung", Toast.LENGTH_SHORT).show()
+//                        intent= Intent(context, AdminNewsActivity::class.java)
+//                        startActivity(intent)
+
+                    }
+
+                    getString(R.string.place_data)->{
+                        Toast.makeText(activity, "Menu Data Tempat Wisata", Toast.LENGTH_SHORT).show()
+                        intent= Intent(context, TouristDataTypeActivity::class.java)
+                        startActivity(intent)
+                    }
+                }
+            }
+        })
     }
     private fun getListMenu(): ArrayList<Menu> {
         val listMenu= ArrayList<Menu>()
