@@ -17,6 +17,14 @@
     <string name="place_data">Data Tempat Wisata</string>
     <string name="data_tempat_wisata">Data Tempat Wisata</string>
     <string name="tambah_data">Tambah data</string>
+    <string name="hapus_data">Hapus Data</string>
+    <string name="add_new_place">Tambah tempat wisata</string>
+    <string name="simpan">Simpan</string>
+    <string name="tidak_ada_data">Tidak ada data</string>
+    <string name="alert_tempat_wisata">Nama tempat wisata harus terisi</string>
+    <string name="masukan_nama_tempat_wisata">Masukan nama tempat wisata</string>
+    <string name="succsess">Berhasil</string>
+    <string name="fail">Gagal</string>
     <string-array name="data_title_menu">
         <item>@string/menu_data</item>
         <item>@string/place_data</item>

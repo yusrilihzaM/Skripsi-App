@@ -15,4 +15,7 @@
     <color name="silver">#bdc3c7</color>
     <color name="white_300">#F5F5F5</color>
     <color name="shimmer_color">#ced6e0</color>
+    <color name="grey_light1">#F5F5F5</color>
+    <color name="grey_light2">#F3F3F3</color>
+    <color name="akun">#E6A919</color>
 </resources>

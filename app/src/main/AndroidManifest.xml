@@ -7,13 +7,15 @@
 
     <application
         android:allowBackup="true"
-        android:usesCleartextTraffic="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.SkripsiAPp">
-        <activity android:name=".ui.TouristDataType.TouristDataTypeActivity"></activity>
+        android:theme="@style/Theme.SkripsiAPp"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".ui.TouristDataType.activity.EditTouristDataTypeMainActivity"></activity>
+        <activity android:name=".ui.TouristDataType.activity.AddTouristDataTypeActivity" />
+        <activity android:name=".ui.TouristDataType.activity.TouristDataTypeActivity" />
         <activity android:name=".ui.splashscreen.SplashActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +23,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.main.MainActivity"></activity>
+        <activity android:name=".ui.main.MainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"

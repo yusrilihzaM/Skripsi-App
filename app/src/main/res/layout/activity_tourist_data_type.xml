@@ -4,8 +4,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.TouristDataType.TouristDataTypeActivity">
+    tools:context=".ui.TouristDataType.activity.TouristDataTypeActivity">
 
+
+    <ImageView
+        android:id="@+id/bg_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="420dp"
+        android:layout_marginTop="@dimen/size_8"
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_splash"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/swipeContainer"
+        app:layout_constraintVertical_bias="1.0" />
     <TextView
         android:id="@+id/no"
         android:layout_marginLeft="@dimen/size_16"
@@ -49,6 +63,7 @@
         android:id="@+id/shimmer"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -93,4 +108,5 @@
             <include layout="@layout/shimmer_item_datatype" />
         </LinearLayout>
     </com.facebook.shimmer.ShimmerFrameLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

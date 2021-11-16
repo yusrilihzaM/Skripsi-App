@@ -1,6 +1,5 @@
 package com.yusril.skripsi_app.ui.home.fragment
 
-import android.content.Context
 import android.content.Intent
 import android.content.res.TypedArray
 import android.os.Bundle
@@ -15,7 +14,7 @@ import com.yusril.skripsi_app.R
 import com.yusril.skripsi_app.adapter.HomeListAdapter
 import com.yusril.skripsi_app.databinding.FragmentHomeBinding
 import com.yusril.skripsi_app.entity.Menu
-import com.yusril.skripsi_app.ui.TouristDataType.TouristDataTypeActivity
+import com.yusril.skripsi_app.ui.TouristDataType.activity.TouristDataTypeActivity
 
 
 class HomeFragment : Fragment() {
@@ -63,6 +62,7 @@ class HomeFragment : Fragment() {
                         Toast.makeText(activity, "Menu Data Tempat Wisata", Toast.LENGTH_SHORT).show()
                         intent= Intent(context, TouristDataTypeActivity::class.java)
                         startActivity(intent)
+                        activity?.finish()
                     }
                 }
             }

@@ -17,6 +17,10 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        each{
+            it.buildConfigField "String", "URL_DATA_TOURIST_TYPE_PLACE",URL_DATA_TOURIST_TYPE_PLACE
+            it.buildConfigField "String", "URL_DATA_TOURIST_TYPE",URL_DATA_TOURIST_TYPE
+        }
     }
 
     buildTypes {
