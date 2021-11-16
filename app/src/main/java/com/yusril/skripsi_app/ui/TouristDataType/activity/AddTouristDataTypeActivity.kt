@@ -35,6 +35,7 @@ class AddTouristDataTypeActivity : AppCompatActivity() {
                 edtTouristDataType=binding.edtDataTouristType.text.toString().trim()
                 touristDataTypeViewModel.postsetTouristDataType(edtTouristDataType)
                 touristDataTypeViewModel.getStatusAddTouristDataType().observe(this,{dataItems->
+
                     if (dataItems[0].status){
                         AestheticDialog.Builder(this@AddTouristDataTypeActivity, DialogStyle.FLAT, DialogType.SUCCESS)
                             .setTitle(getString(R.string.add_new_place))
@@ -96,5 +97,10 @@ class AddTouristDataTypeActivity : AppCompatActivity() {
             binding.status.visibility= View.VISIBLE
             binding.status.text=pesan
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, TouristDataTypeActivity::class.java))
+        finish()
     }
 }

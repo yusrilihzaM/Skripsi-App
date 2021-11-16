@@ -28,7 +28,7 @@
         android:layout_margin="@dimen/size_16"
         android:background="@drawable/bg_edt"
         android:hint="@string/masukan_nama_tempat_wisata"
-        android:inputType="textPassword"
+        android:inputType="text"
         android:padding="@dimen/size_16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

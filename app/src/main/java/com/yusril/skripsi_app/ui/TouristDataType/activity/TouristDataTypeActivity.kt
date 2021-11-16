@@ -20,6 +20,7 @@ import com.yusril.skripsi_app.R
 import com.yusril.skripsi_app.adapter.DataTypeListAdapter
 import com.yusril.skripsi_app.databinding.ActivityTouristDataTypeBinding
 import com.yusril.skripsi_app.response.DataTouristItem
+import com.yusril.skripsi_app.ui.TouristDataType.activity.EditTouristDataTypeMainActivity.Companion.EXTRA_DATA
 import com.yusril.skripsi_app.ui.TouristDataType.viewmodel.TouristDataTypeViewModel
 import com.yusril.skripsi_app.ui.main.MainActivity
 
@@ -43,7 +44,8 @@ class TouristDataTypeActivity : AppCompatActivity() {
             showList()
             dataTypeListAdapter.notifyDataSetChanged()
         }
-     
+
+
     }
 
     private fun showList(){
@@ -61,7 +63,10 @@ class TouristDataTypeActivity : AppCompatActivity() {
             swipeContainer.isRefreshing = false
             dataTypeListAdapter.setOnItemClickCallback(object :DataTypeListAdapter.OnItemClickCallback{
                 override fun onItemClicked(data: DataTouristItem) {
-                    Toast.makeText(this@TouristDataTypeActivity, data.dataType.toString(), Toast.LENGTH_SHORT).show()
+                    val intent = Intent(this@TouristDataTypeActivity,EditTouristDataTypeMainActivity::class.java)
+                    intent.putExtra(EXTRA_DATA, data)
+                    startActivity(intent)
+                    finish()
                 }
 
             })
@@ -101,5 +106,10 @@ class TouristDataTypeActivity : AppCompatActivity() {
             binding.shimmer.showShimmer(false)
             binding.shimmer.visibility= View.GONE
         }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
     }
 }

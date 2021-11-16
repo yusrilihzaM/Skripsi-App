@@ -25,6 +25,14 @@
     <string name="masukan_nama_tempat_wisata">Masukan nama tempat wisata</string>
     <string name="succsess">Berhasil</string>
     <string name="fail">Gagal</string>
+    <string name="edit_place">Edit Tempat Wisata</string>
+    <string name="change_place">Perubahan Tempat Wisata</string>
+    <string name="cancel">Batal</string>
+    <string name="delete_question">Apakah anda ingin menghapus?</string>
+    <string name="delete_question_place">Apakah anda yakin ingin menghapus tempat wisata ini?</string>
+    <string name="delete_place">Hapus Tempat Wisata</string>
+    <string name="yes">Ya</string>
+    <string name="no">Tidak</string>
     <string-array name="data_title_menu">
         <item>@string/menu_data</item>
         <item>@string/place_data</item>
