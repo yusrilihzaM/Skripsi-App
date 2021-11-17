@@ -7,16 +7,13 @@ import android.util.Log
 import android.view.Gravity
 import android.view.MenuItem
 import android.view.View
-import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import com.thecode.aestheticdialogs.*
 import com.yusril.skripsi_app.R
 import com.yusril.skripsi_app.databinding.ActivityEditTouristDataTypeMainBinding
-import com.yusril.skripsi_app.databinding.ActivityTouristDataTypeBinding
-import com.yusril.skripsi_app.response.DataTouristItem
+import com.yusril.skripsi_app.response.DataTouristTypeItem
 import com.yusril.skripsi_app.ui.TouristDataType.viewmodel.TouristDataTypeViewModel
-import com.yusril.skripsi_app.ui.main.MainActivity
 
 class EditTouristDataTypeMainActivity : AppCompatActivity() {
     companion object {
@@ -39,7 +36,7 @@ class EditTouristDataTypeMainActivity : AppCompatActivity() {
         supportActionBar?.title=getString(R.string.edit_place)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         touristDataTypeViewModel= ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(TouristDataTypeViewModel::class.java)
-        val data=intent.getParcelableExtra<DataTouristItem>(EXTRA_DATA) as DataTouristItem
+        val data=intent.getParcelableExtra<DataTouristTypeItem>(EXTRA_DATA) as DataTouristTypeItem
         no=data.no?.toInt()!!
         touristDataType= data.touristDataType.toString()
         idTouristDataType= data.idTouristDataType?.toInt()!!
@@ -120,12 +117,8 @@ class EditTouristDataTypeMainActivity : AppCompatActivity() {
                 if (isDialogClose) {
                     finish()
                 } else {
-
                     touristDataTypeViewModel.deletesetTouristDataType(idTouristDataType)
                     touristDataTypeViewModel.getStatusDelTouristDataType().observe(this,{dataItems->
-                        Toast.makeText(this, dataItems.toString(), Toast.LENGTH_SHORT).show()
-                        Log.d("items", dataItems.toString())
-                        binding.edtDataTouristType.setText(dataItems[0].status.toString())
                         if (dataItems[0].status){
                             dialog("Success",getString(R.string.delete_place))
                         }

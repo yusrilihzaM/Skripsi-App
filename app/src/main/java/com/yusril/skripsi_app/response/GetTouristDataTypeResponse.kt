@@ -5,12 +5,12 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class GetTouristDataTypeResponse(
-	val dataTourist: List<DataTouristItem?>? = null,
+	val dataTouristType: List<DataTouristTypeItem?>? = null,
 	val status: Boolean? = null
 ) : Parcelable
 
 @Parcelize
-data class DataTouristItem(
+data class DataTouristTypeItem(
 	val no: String? = "",
 	val touristDataType: String? = "",
 	val idTouristDataType: String? = "",

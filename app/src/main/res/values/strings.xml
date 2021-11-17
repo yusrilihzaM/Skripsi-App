@@ -33,6 +33,9 @@
     <string name="delete_place">Hapus Tempat Wisata</string>
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>
+    <string name="jumlah_wisatawan">Jumlah Wisatawan</string>
+    <string name="bulan">Bulan</string>
+    <string name="tahun">Tahun</string>
     <string-array name="data_title_menu">
         <item>@string/menu_data</item>
         <item>@string/place_data</item>

@@ -3,28 +3,32 @@ package com.yusril.skripsi_app.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.yusril.skripsi_app.databinding.ItemDataTouristBinding
 import com.yusril.skripsi_app.databinding.ItemDatatypeBinding
+import com.yusril.skripsi_app.response.DataTouristItem
 import com.yusril.skripsi_app.response.DataTouristTypeItem
 
-class DataTypeListAdapter(private val listData: ArrayList<DataTouristTypeItem>): RecyclerView.Adapter<DataTypeListAdapter.ListViewHolder>() {
+class DataTouristListAdapter(private val listData: ArrayList<DataTouristItem>): RecyclerView.Adapter<DataTouristListAdapter.ListViewHolder>() {
     private var onItemClickCallback: OnItemClickCallback? = null
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
 
-    inner class ListViewHolder(private val binding: ItemDatatypeBinding):
+    inner class ListViewHolder(private val binding: ItemDataTouristBinding):
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(dataType: DataTouristTypeItem){
-            binding.no.text=dataType.no
-            binding.title.text=dataType.touristDataType
+        fun bind(data: DataTouristItem){
+            binding.no.text=data.no
+            binding.tvbulan.text=data.month
+            binding.tvtahun.text=data.year
+            binding.jumlah.text=data.dataPengunjung
             itemView.setOnClickListener{
-                onItemClickCallback?.onItemClicked(dataType)
+                onItemClickCallback?.onItemClicked(data)
             }
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val binding=ItemDatatypeBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding=ItemDataTouristBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return ListViewHolder(binding)
     }
 
@@ -36,6 +40,6 @@ class DataTypeListAdapter(private val listData: ArrayList<DataTouristTypeItem>):
         return listData.size
     }
     interface OnItemClickCallback {
-        fun onItemClicked(dataType: DataTouristTypeItem)
+        fun onItemClicked(data: DataTouristItem)
     }
 }

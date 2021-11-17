@@ -20,6 +20,8 @@ android {
         each{
             it.buildConfigField "String", "URL_DATA_TOURIST_TYPE_PLACE",URL_DATA_TOURIST_TYPE_PLACE
             it.buildConfigField "String", "URL_DATA_TOURIST_TYPE",URL_DATA_TOURIST_TYPE
+            it.buildConfigField "String", "URL_DATA_TOURIST",URL_DATA_TOURIST
+            it.buildConfigField "String", "URL_REST_BASE",URL_REST_BASE
         }
     }
 

@@ -10,15 +10,10 @@ import com.loopj.android.http.AsyncHttpResponseHandler
 import com.loopj.android.http.RequestParams
 import com.yusril.skripsi_app.BuildConfig
 import com.yusril.skripsi_app.entity.Status
-import com.yusril.skripsi_app.response.DataTouristItem
-import com.yusril.skripsi_app.response.GetTouristDataTypeResponse
-import com.yusril.skripsi_app.ui.TouristDataType.viewmodel.TouristDataTypeViewModel.Companion.URL_POST_DATA_TOURIST_TYPE
+import com.yusril.skripsi_app.response.DataTouristTypeItem
 
 import cz.msebera.android.httpclient.Header
 import org.json.JSONObject
-import retrofit2.Call
-import retrofit2.Response
-import retrofit2.Callback
 
 class TouristDataTypeViewModel: ViewModel() {
     companion object {
@@ -26,12 +21,12 @@ class TouristDataTypeViewModel: ViewModel() {
         private const val URL_POST_DATA_TOURIST_TYPE = BuildConfig.URL_DATA_TOURIST_TYPE
 
     }
-    val listTouristDataType = MutableLiveData<ArrayList<DataTouristItem>>()
+    val listTouristDataType = MutableLiveData<ArrayList<DataTouristTypeItem>>()
     var statusAddTouristDataType = MutableLiveData<ArrayList<Status>>()
     var statusEditTouristDataType = MutableLiveData<ArrayList<Status>>()
     var statusDeleteTouristDataType = MutableLiveData<ArrayList<Status>>()
     fun setTouristDataType(){
-        val listItems = ArrayList<DataTouristItem>()
+        val listItems = ArrayList<DataTouristTypeItem>()
         val client = AsyncHttpClient()
         val url=URL_DATA_TOURIST_TYPE_PLACE
         client.get(url, object:
@@ -54,7 +49,7 @@ class TouristDataTypeViewModel: ViewModel() {
                         val idTouristDataType=dataItem.getString("id_tourist_data_type")
                         val dataType=dataItem.getString("data_type")
 
-                        val dataTouristItem=DataTouristItem(
+                        val dataTouristItem=DataTouristTypeItem(
                             no.toString(),
                             touristDataType,
                             idTouristDataType,
@@ -231,7 +226,7 @@ class TouristDataTypeViewModel: ViewModel() {
     fun getStatusDelTouristDataType(): LiveData<ArrayList<Status>> {
         return statusDeleteTouristDataType
     }
-    fun getTouristDataType(): LiveData<ArrayList<DataTouristItem>> {
+    fun getTouristDataType(): LiveData<ArrayList<DataTouristTypeItem>> {
         return listTouristDataType
     }
 

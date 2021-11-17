@@ -13,7 +13,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SkripsiAPp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.TouristDataType.activity.EditTouristDataTypeMainActivity"></activity>
+        <activity android:name=".ui.datatourist.activity.DataTouristAttractionActivity"></activity>
+        <activity android:name=".ui.datatourist.activity.EditDataTouristActivity" />
+        <activity android:name=".ui.datatourist.activity.AddDataTouristActivity" />
+        <activity android:name=".ui.datatourist.activity.DataTouristActivity" />
+        <activity android:name=".ui.login.LoginActivity" />
+        <activity android:name=".ui.TouristDataType.activity.EditTouristDataTypeMainActivity" />
         <activity android:name=".ui.TouristDataType.activity.AddTouristDataTypeActivity" />
         <activity android:name=".ui.TouristDataType.activity.TouristDataTypeActivity" />
         <activity android:name=".ui.splashscreen.SplashActivity">
