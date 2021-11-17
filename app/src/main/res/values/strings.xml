@@ -36,6 +36,15 @@
     <string name="jumlah_wisatawan">Jumlah Wisatawan</string>
     <string name="bulan">Bulan</string>
     <string name="tahun">Tahun</string>
+    <string name="_00_0000">00 / 0000</string>
+    <string name="monthyear">Pilih Bulan Dan Tahun</string>
+    <string name="masukan_jumlah_pengunjung_wisata">Masukan jumlah pengunjung wisata</string>
+    <string name="monthyearmust">Bulan dan tahun harus terisi</string>
+    <string name="touristmust">Jumlah pengunjung harus di isi</string>
+    <string name="touristmonthyearmust">Bulan tahun dan jumlah pengunjung wisata harus di isi</string>
+    <string name="data_tourist">Data Wisatawan</string>
+    <string name="suc">Success</string>
+    <string name="succadd">Berhasil di tambahkan</string>
     <string-array name="data_title_menu">
         <item>@string/menu_data</item>
         <item>@string/place_data</item>

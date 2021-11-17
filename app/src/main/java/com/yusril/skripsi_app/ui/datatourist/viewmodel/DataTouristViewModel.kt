@@ -8,8 +8,10 @@ import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import com.loopj.android.http.RequestParams
 import com.yusril.skripsi_app.BuildConfig
+import com.yusril.skripsi_app.entity.Status
 import com.yusril.skripsi_app.response.DataTouristItem
 import com.yusril.skripsi_app.response.DataTouristTypeItem
+import com.yusril.skripsi_app.ui.TouristDataType.viewmodel.TouristDataTypeViewModel
 
 import cz.msebera.android.httpclient.Header
 import org.json.JSONObject
@@ -18,11 +20,15 @@ class DataTouristViewModel: ViewModel() {
     companion object {
         private const val URL_DATA_TOURIST_TYPE_PLACE = BuildConfig.URL_DATA_TOURIST_TYPE_PLACE
         private const val URL_POST_DATA_TOURIST_TYPE = BuildConfig.URL_DATA_TOURIST_TYPE
-        private const val URL_POST_DATA_TOURIST= BuildConfig.URL_DATA_TOURIST
+        private const val URL_DATA_TOURIST= BuildConfig.URL_DATA_TOURIST
         private const val URL_REST_BASE= BuildConfig.URL_REST_BASE
     }
     val listTouristDataType = MutableLiveData<ArrayList<DataTouristTypeItem>>()
     val listTouristData = MutableLiveData<ArrayList<DataTouristItem>>()
+
+    var statusAddTouristData = MutableLiveData<ArrayList<Status>>()
+    var statusEditTouristData = MutableLiveData<ArrayList<Status>>()
+    var statusDeleteTouristData = MutableLiveData<ArrayList<Status>>()
     fun setTouristDataType(){
         val listItems = ArrayList<DataTouristTypeItem>()
         val client = AsyncHttpClient()
@@ -78,7 +84,10 @@ class DataTouristViewModel: ViewModel() {
     ){
         val listDataTourist = ArrayList<DataTouristItem>()
         val client = AsyncHttpClient()
-        client.get("http://192.168.100.6/skripsi-rest-forecasting/api/tourist?id_tourist_data_type=$id_tourist_data_type",object:
+        val params = RequestParams()
+        params.put("id_tourist_data_type", id_tourist_data_type)
+        val url= "$URL_REST_BASE$URL_DATA_TOURIST?id_tourist_data_type=$id_tourist_data_type"
+        client.get(url,object:
             AsyncHttpResponseHandler(){
             override fun onSuccess(
                 statusCode: Int,
@@ -131,6 +140,170 @@ class DataTouristViewModel: ViewModel() {
         }
         )
     }
+
+    fun postsetTouristData(
+        data_pengunjung:Int,
+        month:Int,
+        year:Int,
+        id_tourist_data_type:Int
+    ){
+        val client = AsyncHttpClient()
+        val params = RequestParams()
+        val listItems = ArrayList<Status>()
+        params.put("data_pengunjung", data_pengunjung)
+        params.put("month", month)
+        params.put("year", year)
+        params.put("id_tourist_data_type", id_tourist_data_type)
+        val url= "$URL_REST_BASE$URL_DATA_TOURIST"
+        client.post(url,params,object :AsyncHttpResponseHandler(){
+            override fun onSuccess(
+                statusCode: Int,
+                headers: Array<out Header>?,
+                responseBody: ByteArray
+            ) {
+                try {
+                    val result = String(responseBody)
+                    val jsonObject = JSONObject(result)
+                    val status_data:Boolean= jsonObject["status"] as Boolean
+                    val status=Status(
+                        status_data
+                    )
+                    listItems.add(status)
+                    statusAddTouristData.postValue(listItems)
+                    Log.d("zzz", status.toString())
+                }catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+
+            override fun onFailure(
+                statusCode: Int,
+                headers: Array<out Header>?,
+                responseBody: ByteArray?,
+                error: Throwable?
+            ) {
+                val errorMessage = when (statusCode) {
+                    401 -> "$statusCode : Bad Request"
+                    403 -> "$statusCode : Forbidden"
+                    404 -> "$statusCode : Not Found"
+                    else -> "$statusCode : ${error?.message}"
+
+                }
+                Log.d("onFailure", errorMessage)
+            }
+        })
+    }
+    fun putsetTouristData(
+        id_data_pengunjung:Int,
+        data_pengunjung:Int,
+        month:Int,
+        year:Int,
+        id_tourist_data_type:Int
+    ){
+        val client = AsyncHttpClient()
+        val params = RequestParams()
+        val listItems = ArrayList<Status>()
+        params.put("id_data_pengunjung", id_data_pengunjung)
+        params.put("data_pengunjung", data_pengunjung)
+        params.put("month", month)
+        params.put("year", year)
+        params.put("id_tourist_data_type", id_tourist_data_type)
+        val url= "$URL_REST_BASE$URL_DATA_TOURIST/delete"
+        client.post(url,params,object :AsyncHttpResponseHandler(){
+            override fun onSuccess(
+                statusCode: Int,
+                headers: Array<out Header>?,
+                responseBody: ByteArray
+            ) {
+                try {
+                    val result = String(responseBody)
+                    val jsonObject = JSONObject(result)
+                    val status_data:Boolean= jsonObject["status"] as Boolean
+                    val status=Status(
+                        status_data
+                    )
+                    listItems.add(status)
+                    statusEditTouristData.postValue(listItems)
+                    Log.d("zzz", status.toString())
+                }catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+
+            override fun onFailure(
+                statusCode: Int,
+                headers: Array<out Header>?,
+                responseBody: ByteArray?,
+                error: Throwable?
+            ) {
+                val errorMessage = when (statusCode) {
+                    401 -> "$statusCode : Bad Request"
+                    403 -> "$statusCode : Forbidden"
+                    404 -> "$statusCode : Not Found"
+                    else -> "$statusCode : ${error?.message}"
+
+                }
+                Log.d("onFailure", errorMessage)
+            }
+        })
+    }
+    fun deletesetTouristData(
+        id_data_pengunjung:Int
+    ){
+        val client = AsyncHttpClient()
+        val params = RequestParams()
+        params.put("id_data_pengunjung", id_data_pengunjung)
+        val listItems = ArrayList<Status>()
+        val url= "$URL_REST_BASE$URL_DATA_TOURIST"
+        client.put(url,params,object :AsyncHttpResponseHandler(){
+            override fun onSuccess(
+                statusCode: Int,
+                headers: Array<out Header>?,
+                responseBody: ByteArray
+            ) {
+                Log.d("onSuccess", "Data Berhasil di Dihapus")
+                try {
+                    val result = String(responseBody)
+                    val jsonObject = JSONObject(result)
+                    val status_data:Boolean= jsonObject["status"] as Boolean
+                    val status=Status(
+                        status_data
+                    )
+                    listItems.add(status)
+                    statusDeleteTouristData.postValue(listItems)
+                }catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+
+            override fun onFailure(
+                statusCode: Int,
+                headers: Array<out Header>?,
+                responseBody: ByteArray?,
+                error: Throwable?
+            ) {
+                Log.d("onFailure", "Data Gagal di Dihapus")
+                val errorMessage = when (statusCode) {
+                    401 -> "$statusCode : Bad Request"
+                    403 -> "$statusCode : Forbidden"
+                    404 -> "$statusCode : Not Found"
+                    else -> "$statusCode : ${error?.message}"
+
+                }
+                Log.d("onFailure", errorMessage)
+            }
+        })
+    }
+    fun getStatusAddTouristData(): LiveData<ArrayList<Status>> {
+        return statusAddTouristData
+    }
+    fun getStatusEditTouristData(): LiveData<ArrayList<Status>> {
+        return statusEditTouristData
+    }
+    fun getStatusDelTouristDataType(): LiveData<ArrayList<Status>> {
+        return statusDeleteTouristData
+    }
+
     fun getTouristDataType(): LiveData<ArrayList<DataTouristTypeItem>> {
         return listTouristDataType
     }

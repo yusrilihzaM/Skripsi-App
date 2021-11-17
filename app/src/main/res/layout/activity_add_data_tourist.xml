@@ -4,6 +4,149 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.datatourist.activity.AddDataTouristActivity">
+    >
 
+    <ImageView
+        android:id="@+id/bg_bottom"
+        android:layout_width="match_parent"
+        android:layout_height="450dp"
+
+        android:scaleType="fitXY"
+        android:src="@drawable/ic_splash"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+    <TextView
+        android:id="@+id/status"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size_16"
+        android:background="@color/red"
+        android:fontFamily="@font/poppins"
+        android:gravity="center"
+        android:padding="@dimen/size_8"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_tahun"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="Bulan dan Tahun"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:layout_margin="@dimen/size_16"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/status" />
+
+    <LinearLayout
+        android:id="@+id/ln"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_tahun"
+        app:layout_constraintVertical_bias="0.0" >
+        <EditText
+            android:id="@+id/edt_tahun"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/size_16"
+            android:layout_marginEnd="@dimen/size_16"
+            android:layout_weight="1"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:inputType="text"
+            android:background="@drawable/bg_edt"
+            android:hint="@string/_00_0000"
+            android:padding="@dimen/size_16"
+            android:textColor="@color/black"
+            android:textColorHighlight="@color/black"
+
+            />
+        <ImageButton
+            android:id="@+id/btn_year_month"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:padding="@dimen/size_32"
+            android:layout_gravity="center"
+            android:layout_marginEnd="@dimen/size_16"
+            android:background="@drawable/calendar"
+            android:foreground="?android:attr/selectableItemBackground"
+            app:layout_constraintEnd_toEndOf="@+id/tv_tahun"
+            tools:layout_editor_absoluteY="41dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_data_tourist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_16"
+        android:layout_marginEnd="@dimen/size_16"
+        android:fontFamily="@font/poppins"
+        android:text="Jumlah Pengunjung"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ln"
+        app:layout_constraintVertical_bias="0.022" />
+
+    <EditText
+        android:id="@+id/edt_jumlah"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/size_16"
+        android:layout_marginEnd="@dimen/size_16"
+        android:background="@drawable/bg_edt"
+        android:textCursorDrawable="@drawable/color_cursor"
+        android:hint="@string/masukan_jumlah_pengunjung_wisata"
+        android:inputType="numberDecimal"
+        android:padding="@dimen/size_16"
+        android:textColor="@color/black"
+        android:textColorHighlight="@color/black"
+        app:layout_constraintBottom_toBottomOf="@+id/bg_bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_data_tourist"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageButton
+        android:id="@+id/btn_submit"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        android:layout_margin="@dimen/size_16"
+        android:layout_marginBottom="@dimen/size_32"
+        android:background="@drawable/bg_btn_green"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/edt_jumlah"
+        app:layout_constraintVertical_bias="0.898" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/poppins"
+        android:text="@string/simpan"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_submit"
+        app:layout_constraintEnd_toEndOf="@+id/btn_submit"
+        app:layout_constraintStart_toStartOf="@+id/btn_submit"
+        app:layout_constraintTop_toTopOf="@+id/btn_submit" />
 </androidx.constraintlayout.widget.ConstraintLayout>

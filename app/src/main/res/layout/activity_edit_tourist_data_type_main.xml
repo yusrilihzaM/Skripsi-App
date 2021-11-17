@@ -27,6 +27,7 @@
         android:layout_height="65dp"
         android:layout_margin="@dimen/size_16"
         android:background="@drawable/bg_edt"
+        android:textCursorDrawable="@drawable/color_cursor"
         android:hint="@string/masukan_nama_tempat_wisata"
         android:inputType="text"
         android:padding="@dimen/size_16"

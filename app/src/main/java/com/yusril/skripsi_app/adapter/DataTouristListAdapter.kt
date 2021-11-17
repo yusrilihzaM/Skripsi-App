@@ -1,19 +1,23 @@
 package com.yusril.skripsi_app.adapter
 
+import android.R.attr.data
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.yusril.skripsi_app.databinding.ItemDataTouristBinding
-import com.yusril.skripsi_app.databinding.ItemDatatypeBinding
 import com.yusril.skripsi_app.response.DataTouristItem
-import com.yusril.skripsi_app.response.DataTouristTypeItem
+
 
 class DataTouristListAdapter(private val listData: ArrayList<DataTouristItem>): RecyclerView.Adapter<DataTouristListAdapter.ListViewHolder>() {
     private var onItemClickCallback: OnItemClickCallback? = null
     fun setOnItemClickCallback(onItemClickCallback: OnItemClickCallback) {
         this.onItemClickCallback = onItemClickCallback
     }
-
+    fun clear() {
+        val size: Int = listData.size
+        listData.clear()
+        notifyItemRangeRemoved(0, size)
+    }
     inner class ListViewHolder(private val binding: ItemDataTouristBinding):
         RecyclerView.ViewHolder(binding.root) {
         fun bind(data: DataTouristItem){

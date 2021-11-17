@@ -1,12 +1,11 @@
 package com.yusril.skripsi_app.ui.datatourist.activity
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -18,17 +17,17 @@ import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.yusril.skripsi_app.R
 import com.yusril.skripsi_app.adapter.DataTouristListAdapter
-import com.yusril.skripsi_app.adapter.DataTypeListAdapter
 import com.yusril.skripsi_app.databinding.ActivityDataTouristBinding
 import com.yusril.skripsi_app.response.DataTouristItem
 import com.yusril.skripsi_app.response.DataTouristTypeItem
-import com.yusril.skripsi_app.ui.TouristDataType.activity.EditTouristDataTypeMainActivity
+import com.yusril.skripsi_app.ui.datatourist.activity.AddDataTouristActivity.Companion.EXTRA_DATA_TOURIST_TYPE
+import com.yusril.skripsi_app.ui.datatourist.activity.EditDataTouristActivity.Companion.EXTRA_DATA_TOURIST_TYPE_EDIT
 import com.yusril.skripsi_app.ui.datatourist.viewmodel.DataTouristViewModel
 
 class DataTouristActivity : AppCompatActivity() {
     companion object {
         const val EXTRA_DATA_TOURIST = "extra_data"
-
+        const val EXTRA_DATA_TOURIST1 = "extra_data"
     }
     private lateinit var binding: ActivityDataTouristBinding
     private lateinit var dataTouristListAdapter: DataTouristListAdapter
@@ -36,9 +35,9 @@ class DataTouristActivity : AppCompatActivity() {
     private var touristDataType:String = ""
     private var idTouristDataType:Int = 0
     private var dataType:String = ""
+
     private lateinit var swipeContainer: SwipeRefreshLayout
     private lateinit var dataTouristViewModel: DataTouristViewModel
-    val listItems = ArrayList<DataTouristItem>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_data_tourist)
@@ -46,12 +45,23 @@ class DataTouristActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         dataTouristViewModel= ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(DataTouristViewModel::class.java)
+
         val data=intent.getParcelableExtra<DataTouristTypeItem>(EXTRA_DATA_TOURIST) as DataTouristTypeItem
-        no=data.no?.toInt()!!
-        touristDataType= data.touristDataType.toString()
-        idTouristDataType= data.idTouristDataType?.toInt()!!
-        dataType= data.dataType.toString()
-        supportActionBar?.title=touristDataType
+        val data1=intent.getParcelableExtra<DataTouristTypeItem>(EXTRA_DATA_TOURIST1) as DataTouristTypeItem
+        if(data!=null){
+            no=data.no?.toInt()!!
+            touristDataType= data.touristDataType.toString()
+            idTouristDataType= data.idTouristDataType?.toInt()!!
+            dataType= data.dataType.toString()
+            supportActionBar?.title=touristDataType
+        }
+        if(data1!=null){
+            no=data1.no?.toInt()!!
+            touristDataType= data1.touristDataType.toString()
+            idTouristDataType= data1.idTouristDataType?.toInt()!!
+            dataType= data1.dataType.toString()
+            supportActionBar?.title=touristDataType
+        }
 
 
 
@@ -71,7 +81,6 @@ class DataTouristActivity : AppCompatActivity() {
         dataTouristViewModel.setTouristData(idTouristDataType)
 
         dataTouristViewModel.getTouristData().observe(this,{dataItems->
-            binding.jumlah.text=dataItems.size.toString()
             if (dataItems.size>0){
                 showShimmer(false)
                 showNodata(false)
@@ -86,12 +95,12 @@ class DataTouristActivity : AppCompatActivity() {
 
             swipeContainer.isRefreshing = false
             dataTouristListAdapter.setOnItemClickCallback(object :DataTouristListAdapter.OnItemClickCallback{
-                override fun onItemClicked(dataType: DataTouristItem) {
-//                    val intent = Intent(this@DataTouristActivity,
-//                        DataTouristActivity::class.java)
-//                    intent.putExtra(EXTRA_DATA_TOURIST, dataType)
-//                    startActivity(intent)
-//                    finish()
+                override fun onItemClicked(data: DataTouristItem) {
+                    val intent = Intent(this@DataTouristActivity,
+                        EditDataTouristActivity::class.java)
+                    intent.putExtra(EXTRA_DATA_TOURIST_TYPE_EDIT, data)
+                    startActivity(intent)
+                    finish()
                 }
 
             })
@@ -105,6 +114,14 @@ class DataTouristActivity : AppCompatActivity() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
+            R.id.add->{
+                Toast.makeText(this, "tambah", Toast.LENGTH_SHORT).show()
+                val data=intent.getParcelableExtra<DataTouristTypeItem>(EXTRA_DATA_TOURIST) as DataTouristTypeItem
+                val intent = Intent(this, AddDataTouristActivity::class.java)
+                intent.putExtra(EXTRA_DATA_TOURIST_TYPE, data)
+                startActivity(intent)
+                true
+            }
             16908332->{
                 startActivity(Intent(this@DataTouristActivity, DataTouristAttractionActivity::class.java))
                 this.finish()

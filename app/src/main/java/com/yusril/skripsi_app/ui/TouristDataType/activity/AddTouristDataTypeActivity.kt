@@ -13,9 +13,11 @@ import com.yusril.skripsi_app.R
 import com.yusril.skripsi_app.databinding.ActivityAddTouristDataTypeBinding
 import com.yusril.skripsi_app.databinding.ActivityTouristDataTypeBinding
 import com.yusril.skripsi_app.ui.TouristDataType.viewmodel.TouristDataTypeViewModel
+import com.yusril.skripsi_app.ui.datatourist.activity.DataTouristActivity
 import com.yusril.skripsi_app.ui.main.MainActivity
 
 class AddTouristDataTypeActivity : AppCompatActivity() {
+
     private lateinit var binding: ActivityAddTouristDataTypeBinding
     private lateinit var touristDataTypeViewModel: TouristDataTypeViewModel
     private lateinit var edtTouristDataType:String
@@ -47,6 +49,7 @@ class AddTouristDataTypeActivity : AppCompatActivity() {
                             .setOnClickListener(object : OnDialogClickListener {
                                 override fun onClick(dialog: AestheticDialog.Builder) {
                                     dialog.dismiss()
+
                                     startActivity(Intent(this@AddTouristDataTypeActivity, TouristDataTypeActivity::class.java))
                                     finish()
                                     //actions...

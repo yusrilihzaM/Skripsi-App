@@ -29,6 +29,7 @@
         android:background="@drawable/bg_edt"
         android:hint="@string/masukan_nama_tempat_wisata"
         android:inputType="text"
+        android:textCursorDrawable="@drawable/color_cursor"
         android:padding="@dimen/size_16"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
