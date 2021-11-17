@@ -43,6 +43,7 @@ class AddDataTouristActivity : AppCompatActivity() {
         idTouristDataType= data.idTouristDataType?.toInt()!!
         dataType= data.dataType.toString()
         supportActionBar?.title=touristDataType
+
         binding.btnYearMonth.setOnClickListener {
 
             val today = Calendar.getInstance()

@@ -2,6 +2,7 @@ package com.yusril.skripsi_app.ui.datatourist.activity
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import android.widget.Toast
@@ -21,6 +22,7 @@ import com.yusril.skripsi_app.databinding.ActivityDataTouristBinding
 import com.yusril.skripsi_app.response.DataTouristItem
 import com.yusril.skripsi_app.response.DataTouristTypeItem
 import com.yusril.skripsi_app.ui.datatourist.activity.AddDataTouristActivity.Companion.EXTRA_DATA_TOURIST_TYPE
+import com.yusril.skripsi_app.ui.datatourist.activity.EditDataTouristActivity.Companion.EXTRA_DATA_TOURIST_EDIT
 import com.yusril.skripsi_app.ui.datatourist.activity.EditDataTouristActivity.Companion.EXTRA_DATA_TOURIST_TYPE_EDIT
 import com.yusril.skripsi_app.ui.datatourist.viewmodel.DataTouristViewModel
 
@@ -35,7 +37,7 @@ class DataTouristActivity : AppCompatActivity() {
     private var touristDataType:String = ""
     private var idTouristDataType:Int = 0
     private var dataType:String = ""
-
+    private lateinit var intentEdit: Intent
     private lateinit var swipeContainer: SwipeRefreshLayout
     private lateinit var dataTouristViewModel: DataTouristViewModel
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -45,7 +47,8 @@ class DataTouristActivity : AppCompatActivity() {
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         dataTouristViewModel= ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(DataTouristViewModel::class.java)
-
+        intentEdit = Intent(this@DataTouristActivity,
+            EditDataTouristActivity::class.java)
         val data=intent.getParcelableExtra<DataTouristTypeItem>(EXTRA_DATA_TOURIST) as DataTouristTypeItem
         val data1=intent.getParcelableExtra<DataTouristTypeItem>(EXTRA_DATA_TOURIST1) as DataTouristTypeItem
         if(data!=null){
@@ -54,6 +57,7 @@ class DataTouristActivity : AppCompatActivity() {
             idTouristDataType= data.idTouristDataType?.toInt()!!
             dataType= data.dataType.toString()
             supportActionBar?.title=touristDataType
+            intentEdit.putExtra(EXTRA_DATA_TOURIST_TYPE_EDIT, data)
         }
         if(data1!=null){
             no=data1.no?.toInt()!!
@@ -61,7 +65,10 @@ class DataTouristActivity : AppCompatActivity() {
             idTouristDataType= data1.idTouristDataType?.toInt()!!
             dataType= data1.dataType.toString()
             supportActionBar?.title=touristDataType
+            intentEdit.putExtra(EXTRA_DATA_TOURIST_TYPE_EDIT, data1)
         }
+
+
 
 
 
@@ -95,11 +102,10 @@ class DataTouristActivity : AppCompatActivity() {
 
             swipeContainer.isRefreshing = false
             dataTouristListAdapter.setOnItemClickCallback(object :DataTouristListAdapter.OnItemClickCallback{
-                override fun onItemClicked(data: DataTouristItem) {
-                    val intent = Intent(this@DataTouristActivity,
-                        EditDataTouristActivity::class.java)
-                    intent.putExtra(EXTRA_DATA_TOURIST_TYPE_EDIT, data)
-                    startActivity(intent)
+                override fun onItemClicked(dataTouristItem: DataTouristItem) {
+                    Log.d("dataTouristItem",dataTouristItem.toString())
+                    intentEdit.putExtra(EXTRA_DATA_TOURIST_EDIT, dataTouristItem)
+                    startActivity(intentEdit)
                     finish()
                 }
 

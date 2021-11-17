@@ -45,6 +45,8 @@
     <string name="data_tourist">Data Wisatawan</string>
     <string name="suc">Success</string>
     <string name="succadd">Berhasil di tambahkan</string>
+    <string name="succput">Berhasil diperbarui</string>
+    <string name="failput">Gagal di perbarui</string>
     <string-array name="data_title_menu">
         <item>@string/menu_data</item>
         <item>@string/place_data</item>
