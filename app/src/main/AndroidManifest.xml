@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SkripsiAPp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.datatourist.activity.DataTouristAttractionActivity"></activity>
+        <activity android:name=".ui.calculate.activity.CalculateActivity"></activity>
+        <activity android:name=".ui.datatourist.activity.DataTouristAttractionActivity" />
         <activity android:name=".ui.datatourist.activity.EditDataTouristActivity" />
         <activity android:name=".ui.datatourist.activity.AddDataTouristActivity" />
         <activity android:name=".ui.datatourist.activity.DataTouristActivity" />

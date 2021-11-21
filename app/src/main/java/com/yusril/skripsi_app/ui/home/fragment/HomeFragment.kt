@@ -15,6 +15,7 @@ import com.yusril.skripsi_app.adapter.HomeListAdapter
 import com.yusril.skripsi_app.databinding.FragmentHomeBinding
 import com.yusril.skripsi_app.entity.Menu
 import com.yusril.skripsi_app.ui.TouristDataType.activity.TouristDataTypeActivity
+import com.yusril.skripsi_app.ui.calculate.activity.CalculateActivity
 import com.yusril.skripsi_app.ui.datatourist.activity.DataTouristAttractionActivity
 
 
@@ -53,15 +54,18 @@ class HomeFragment : Fragment() {
                 val intent: Intent
                 when(data.title){
                     getString(R.string.menu_data)->{
-                        Toast.makeText(activity, "Menu Data Pengunjung", Toast.LENGTH_SHORT).show()
                         intent= Intent(context, DataTouristAttractionActivity::class.java)
                         startActivity(intent)
 
                     }
 
                     getString(R.string.place_data)->{
-                        Toast.makeText(activity, "Menu Data Tempat Wisata", Toast.LENGTH_SHORT).show()
                         intent= Intent(context, TouristDataTypeActivity::class.java)
+                        startActivity(intent)
+                        activity?.finish()
+                    }
+                    getString(R.string.menu_calculate)->{
+                        intent= Intent(context, CalculateActivity::class.java)
                         startActivity(intent)
                         activity?.finish()
                     }

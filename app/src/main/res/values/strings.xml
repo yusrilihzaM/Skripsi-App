@@ -30,7 +30,9 @@
     <string name="cancel">Batal</string>
     <string name="delete_question">Apakah anda ingin menghapus?</string>
     <string name="delete_question_place">Apakah anda yakin ingin menghapus tempat wisata ini?</string>
+    <string name="delete_question_tourist">Apakah anda yakin ingin menghapus data jumlah wisatawan ini?</string>
     <string name="delete_place">Hapus Tempat Wisata</string>
+    <string name="delete_tourist">Hapus Data Jumlah wisatawan</string>
     <string name="yes">Ya</string>
     <string name="no">Tidak</string>
     <string name="jumlah_wisatawan">Jumlah Wisatawan</string>
@@ -44,30 +46,35 @@
     <string name="touristmonthyearmust">Bulan tahun dan jumlah pengunjung wisata harus di isi</string>
     <string name="data_tourist">Data Wisatawan</string>
     <string name="suc">Success</string>
+    <string name="succacalculate">Berhasil di hitung</string>
     <string name="succadd">Berhasil di tambahkan</string>
     <string name="succput">Berhasil diperbarui</string>
     <string name="failput">Gagal di perbarui</string>
+    <string name="faildel">Gagal dihapus</string>
+    <string name="succdel">Berhasil dihapus</string>
+    <string name="menu_calculate">Hitung Model Peramalan</string>
+    <string name="menu_aditif">Dekomposisi Aditif</string>
+    <string name="menu_multiplikatif">Dekomposisi Mulitplikatif</string>
+    <string name="menu_ramal">Ramal Masa Depan</string>
+    <string name="hitung_model_peramalan">Hitung Model Peramalan</string>
+    <string name="notifcount0">Belum melakukan perhitungan model peramalan</string>
+    <string name="modeldone">Telah melakukan perhitungan model peramalan</string>
+    <string name="mulai_hitung_model_peramalan">Mulai Hitung Model Peramalan</string>
     <string-array name="data_title_menu">
         <item>@string/menu_data</item>
         <item>@string/place_data</item>
-        <item>@string/menu_data</item>
-        <item>@string/menu_data</item>
-        <item>@string/menu_data</item>
-        <item>@string/menu_data</item>
-        <item>@string/menu_data</item>
-        <item>@string/menu_data</item>
-        <item>@string/menu_data</item>
+        <item>@string/menu_calculate</item>
+        <item>@string/menu_ramal</item>
+        <item>@string/menu_aditif</item>
+        <item>@string/menu_multiplikatif</item>
     </string-array>
 
     <array name="data_ic_menu">
         <item>@drawable/ic_data_pengunjung</item>
         <item>@drawable/ic_tempat_wisata</item>
-        <item>@drawable/ic_data_pengunjung</item>
-        <item>@drawable/ic_data_pengunjung</item>
-        <item>@drawable/ic_data_pengunjung</item>
-        <item>@drawable/ic_data_pengunjung</item>
-        <item>@drawable/ic_data_pengunjung</item>
-        <item>@drawable/ic_data_pengunjung</item>
-        <item>@drawable/ic_data_pengunjung</item>
+        <item>@drawable/ic_calculate</item>
+        <item>@drawable/ic_ramal</item>
+        <item>@drawable/ic_aditif</item>
+        <item>@drawable/ic_multiplikatif</item>
     </array>
 </resources>

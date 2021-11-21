@@ -77,7 +77,11 @@ class DataTouristAttractionActivity : AppCompatActivity() {
             else -> true
         }
     }
-
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, MainActivity::class.java))
+        finish()
+    }
     private fun showShimmer(boolean: Boolean){
         if(boolean){
             binding.shimmer.startShimmer()
@@ -90,9 +94,5 @@ class DataTouristAttractionActivity : AppCompatActivity() {
             binding.shimmer.visibility= View.GONE
         }
     }
-    override fun onBackPressed() {
-        super.onBackPressed()
-        startActivity(Intent(this, MainActivity::class.java))
-        finish()
-    }
+
 }

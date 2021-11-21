@@ -19,23 +19,23 @@
           android:src="@drawable/ic_splash"
           app:layout_constraintBottom_toBottomOf="parent"
           app:layout_constraintEnd_toEndOf="parent"
-          app:layout_constraintHorizontal_bias="0.0"
+          app:layout_constraintHorizontal_bias="1.0"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/rv_menu"
           app:layout_constraintVertical_bias="1.0" />
+
       <androidx.recyclerview.widget.RecyclerView
           android:id="@+id/rv_menu"
           android:layout_width="match_parent"
-          android:layout_height="wrap_content"
+          android:layout_height="0dp"
           android:layout_marginTop="@dimen/size_16"
+          android:paddingRight="@dimen/size_8"
           app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
-          android:layout_marginLeft="@dimen/size_16"
-          android:layout_marginRight="@dimen/size_16"
           tools:listitem="@layout/item_menu"
           app:layout_constraintEnd_toEndOf="parent"
           app:layout_constraintStart_toStartOf="parent"
           app:layout_constraintTop_toBottomOf="@+id/imageView"
-          app:spanCount="3" />
+          app:spanCount="4" />
       <TextView
           android:id="@+id/hi"
           android:layout_width="match_parent"
