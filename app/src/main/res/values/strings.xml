@@ -60,6 +60,16 @@
     <string name="notifcount0">Belum melakukan perhitungan model peramalan</string>
     <string name="modeldone">Telah melakukan perhitungan model peramalan</string>
     <string name="mulai_hitung_model_peramalan">Mulai Hitung Model Peramalan</string>
+    <string name="ramalperiodemasadepan">Ramal Periode Masa Depan</string>
+    <string name="masukan_jumlah_periode">Masukan jumlah periode bulan</string>
+    <string name="mulai_ramal_periode_masa_depan">Mulai Ramal Periode Masa Depan</string>
+    <string name="titlef_forecast_future">Ramal Periode Masa Depan</string>
+    <string name="status_future">Bisa Melakukan Peramalan Periode Masa Depan</string>
+    <string name="suc_future">Peramalan Periode Masa Depan Berhasil</string>
+    <string name="fail_future">Belum Bisa Melakukan Peramalan Periode Masa Depan, Model Peramalan Belum Di Hitung</string>
+    <string name="edtperiodmust">Periode Harus Di Isi</string>
+    <string name="fail_future_forecast">Gagal Melakukan Peramalan</string>
+    <string name="anda_dapat">. Anda Dapat Meramalkan Periode Yang Akan Datang</string>
     <string-array name="data_title_menu">
         <item>@string/menu_data</item>
         <item>@string/place_data</item>

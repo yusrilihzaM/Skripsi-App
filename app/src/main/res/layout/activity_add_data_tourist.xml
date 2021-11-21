@@ -113,7 +113,7 @@
         android:background="@drawable/bg_edt"
         android:textCursorDrawable="@drawable/color_cursor"
         android:hint="@string/masukan_jumlah_pengunjung_wisata"
-        android:inputType="numberDecimal"
+        android:inputType="number"
         android:padding="@dimen/size_16"
         android:textColor="@color/black"
         android:textColorHighlight="@color/black"

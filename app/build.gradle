@@ -24,6 +24,7 @@ android {
             it.buildConfigField "String", "URL_REST_BASE",URL_REST_BASE
             it.buildConfigField "String", "URL_CALCULATE",URL_CALCULATE
             it.buildConfigField "String", "URL_COUNT_FORECAST",URL_COUNT_FORECAST
+            it.buildConfigField "String", "URL_FORECAST_FUTURE",URL_FORECAST_FUTURE
         }
     }
 

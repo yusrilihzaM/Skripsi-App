@@ -7,7 +7,6 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.yusril.skripsi_app.R
@@ -17,6 +16,7 @@ import com.yusril.skripsi_app.entity.Menu
 import com.yusril.skripsi_app.ui.TouristDataType.activity.TouristDataTypeActivity
 import com.yusril.skripsi_app.ui.calculate.activity.CalculateActivity
 import com.yusril.skripsi_app.ui.datatourist.activity.DataTouristAttractionActivity
+import com.yusril.skripsi_app.ui.forecastFuture.activity.ForecastFutureActivity
 
 
 class HomeFragment : Fragment() {
@@ -66,6 +66,11 @@ class HomeFragment : Fragment() {
                     }
                     getString(R.string.menu_calculate)->{
                         intent= Intent(context, CalculateActivity::class.java)
+                        startActivity(intent)
+                        activity?.finish()
+                    }
+                    getString(R.string.menu_ramal)->{
+                        intent= Intent(context, ForecastFutureActivity::class.java)
                         startActivity(intent)
                         activity?.finish()
                     }

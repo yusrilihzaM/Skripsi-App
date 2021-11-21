@@ -1,6 +1,5 @@
-package com.yusril.skripsi_app.ui.calculate.activity
+package com.yusril.skripsi_app.ui.forecastFuture.activity
 
-import android.annotation.SuppressLint
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -10,60 +9,74 @@ import android.view.View
 import androidx.lifecycle.ViewModelProvider
 import com.thecode.aestheticdialogs.*
 import com.yusril.skripsi_app.R
-import com.yusril.skripsi_app.databinding.ActivityCalculateBinding
-import com.yusril.skripsi_app.databinding.ActivityDataTouristAttractionBinding
-import com.yusril.skripsi_app.response.DataTouristTypeItem
+import com.yusril.skripsi_app.databinding.ActivityForecastFutureBinding
 import com.yusril.skripsi_app.ui.calculate.ViewModel.CalculateVIewModel
-import com.yusril.skripsi_app.ui.datatourist.activity.AddDataTouristActivity
-import com.yusril.skripsi_app.ui.datatourist.activity.DataTouristActivity
-import com.yusril.skripsi_app.ui.datatourist.viewmodel.DataTouristViewModel
+import com.yusril.skripsi_app.ui.calculate.activity.CalculateActivity
+import com.yusril.skripsi_app.ui.forecastFuture.viewmodel.ForecastFutureModel
 import com.yusril.skripsi_app.ui.main.MainActivity
 
-class CalculateActivity : AppCompatActivity() {
+class ForecastFutureActivity : AppCompatActivity(){
     private lateinit var calculateVIewModel: CalculateVIewModel
-    private lateinit var binding: ActivityCalculateBinding
-    @SuppressLint("ResourceAsColor")
+    private lateinit var forecastFutureModel: ForecastFutureModel
+    private lateinit var binding: ActivityForecastFutureBinding
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_calculate)
-        binding = ActivityCalculateBinding.inflate(layoutInflater)
+        setContentView(R.layout.activity_forecast_future)
+        binding = ActivityForecastFutureBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        supportActionBar?.title=getString(R.string.hitung_model_peramalan)
+        supportActionBar?.title=getString(R.string.ramalperiodemasadepan)+getString(R.string.anda_dapat)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+
         calculateVIewModel= ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
             CalculateVIewModel::class.java)
-
+        forecastFutureModel= ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(
+            ForecastFutureModel::class.java)
         calculateVIewModel.setCountData()
         calculateVIewModel.getStatusCountData().observe(this,{data->
-            binding.status.visibility=View.VISIBLE
-            binding.spinKit.visibility=View.VISIBLE
+            binding.status.visibility= View.VISIBLE
+            binding.spinKit.visibility= View.VISIBLE
             if(data[0].countData.toString().toInt()>=0){
                 binding.status.setBackgroundResource(R.color.yellow)
                 binding.status.text=getString(R.string.modeldone)
+                binding.btnSubmit.setOnClickListener {
+                    if(binding.edtPeriod.text.isEmpty()){
+                        binding.edtPeriod.error = getString(R.string.edtperiodmust)
+                    }else{
+                        val period=binding.edtPeriod.text.toString().toInt()
+                        forecastFutureModel.setPostForecastFuture(period)
+                        forecastFutureModel.getStatusForecastFuture().observe(this,{dataItem->
+                            if (dataItem[0].status){
+                                dialog(
+                                    "1",
+                                    getString(R.string.ramalperiodemasadepan),
+                                    getString(R.string.suc_future)
+                                )
+                            }
+                            else{
+                                dialog(
+                                    getString(R.string.fail),
+                                    getString(R.string.ramalperiodemasadepan),
+                                    getString(R.string.fail_future_forecast)
+                                )
+                            }
+                        })
+                    }
+
+
+                }
             }
             if(data[0].countData.toString().toInt()==0){
                 binding.status.setBackgroundResource(R.color.red)
-                binding.status.text=getString(R.string.notifcount0)
-
-            }
-        })
-
-        binding.btnSubmit.setOnClickListener {
-            calculateVIewModel.setCalculate()
-            calculateVIewModel.getStatusCalculate().observe(this,{data->
-                if (data[0].status){
-                    dialog("1"
-                    ,getString(R.string.hitung_model_peramalan)
-                    ,getString(R.string.succacalculate)
+                binding.status.text=getString(R.string.fail_future)
+                binding.btnSubmit.setOnClickListener {
+                    dialog(
+                        "2",
+                        getString(R.string.titlef_forecast_future),
+                        getString(R.string.fail_future)
                     )
                 }
-                else{
-                    dialog("2"
-                        ,getString(R.string.hitung_model_peramalan)
-                        ,getString(R.string.fail))
-                }
-            })
-        }
+            }
+        })
     }
     override fun onCreateOptionsMenu(menu: android.view.Menu?): Boolean {
         val inflater=menuInflater
@@ -73,7 +86,7 @@ class CalculateActivity : AppCompatActivity() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         return when (item.itemId) {
             16908332->{
-                startActivity(Intent(this@CalculateActivity, MainActivity::class.java))
+                startActivity(Intent(this@ForecastFutureActivity, MainActivity::class.java))
                 this.finish()
                 true
             }
@@ -91,7 +104,7 @@ class CalculateActivity : AppCompatActivity() {
         message:String
     ){
         if(type=="1"){
-            AestheticDialog.Builder(this@CalculateActivity, DialogStyle.FLAT, DialogType.SUCCESS)
+            AestheticDialog.Builder(this@ForecastFutureActivity, DialogStyle.FLAT, DialogType.SUCCESS)
                 .setTitle(title)
                 .setMessage(message)
                 .setCancelable(false)
@@ -103,12 +116,11 @@ class CalculateActivity : AppCompatActivity() {
                         dialog.dismiss()
                         pindah()
                         finish()
-                        //actions...
                     }
                 })
                 .show()
         }else{
-            AestheticDialog.Builder(this@CalculateActivity, DialogStyle.FLAT, DialogType.ERROR)
+            AestheticDialog.Builder(this@ForecastFutureActivity, DialogStyle.FLAT, DialogType.ERROR)
                 .setTitle(title)
                 .setMessage(message)
                 .setCancelable(false)
@@ -125,10 +137,10 @@ class CalculateActivity : AppCompatActivity() {
         }
     }
     fun pindah(){
-
-        val intent = Intent(this@CalculateActivity,
-            CalculateActivity::class.java)
-
+        val intent = Intent(this@ForecastFutureActivity,
+            ForecastFutureActivity::class.java)
         startActivity(intent)
     }
+
+
 }

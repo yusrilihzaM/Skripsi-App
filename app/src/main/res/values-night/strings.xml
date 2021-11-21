@@ -2,4 +2,7 @@
 <resources>
     <string name="alert_tempat_wisata">Nama tempat wisata harus terisi</string>
     <string name="bulan">Bulan</string>
+    <string name="masukan_jumlah_periode">Masukan jumlah periode bulan</string>
+    <string name="titlef_forecast_future">Ramal Periode Masa Depan</string>
+    <string name="fail_future">Belum Meramal Periode Masa Depan, Model Peramalan Belum Di Hitung</string>
 </resources>
