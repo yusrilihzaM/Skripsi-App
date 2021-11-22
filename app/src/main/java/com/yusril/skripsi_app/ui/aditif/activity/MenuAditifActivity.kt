@@ -1,30 +1,20 @@
 package com.yusril.skripsi_app.ui.aditif.activity
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.content.res.TypedArray
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.MenuItem
-import androidx.recyclerview.widget.GridLayoutManager
+import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.yusril.skripsi_app.R
-import com.yusril.skripsi_app.adapter.HomeListAdapter
 import com.yusril.skripsi_app.adapter.MenuForecastListAdapter
-import com.yusril.skripsi_app.databinding.ActivityAditifDataTypeBinding
-import com.yusril.skripsi_app.databinding.ActivityDataTouristBinding
 import com.yusril.skripsi_app.databinding.ActivityMenuAditifBinding
-import com.yusril.skripsi_app.entity.Menu
 import com.yusril.skripsi_app.entity.MenuForecast
 import com.yusril.skripsi_app.response.DataTouristTypeItem
-import com.yusril.skripsi_app.ui.TouristDataType.activity.TouristDataTypeActivity
-import com.yusril.skripsi_app.ui.calculate.activity.CalculateActivity
-import com.yusril.skripsi_app.ui.datatourist.activity.DataTouristActivity
+import com.yusril.skripsi_app.ui.aditif.activity.AditifChartActivity.Companion.EXTRA_DATA_CHART_ADITIF
 import com.yusril.skripsi_app.ui.datatourist.activity.DataTouristAttractionActivity
-import com.yusril.skripsi_app.ui.datatourist.activity.EditDataTouristActivity
-import com.yusril.skripsi_app.ui.forecastFuture.activity.ForecastFutureActivity
-import com.yusril.skripsi_app.ui.main.MainActivity
-import com.yusril.skripsi_app.ui.multiplikatif.activity.MultiplikatifDataTypeActivity
 
 class MenuAditifActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMenuAditifBinding
@@ -46,15 +36,22 @@ class MenuAditifActivity : AppCompatActivity() {
         binding = ActivityMenuAditifBinding.inflate(layoutInflater)
         setContentView(binding.root)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
+        showMenu()
+    }
+
+    override fun onResume() {
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
+        super.onResume()
+    }
+    private  fun showMenu(){
         val data=intent.getParcelableExtra<DataTouristTypeItem>(EXTRA_DATA_FORECASTING) as DataTouristTypeItem
+        Log.d("datatype1",data.toString())
         no=data.no?.toInt()!!
         touristDataType= data.touristDataType.toString()
         idTouristDataType= data.idTouristDataType?.toInt()!!
         dataType= data.dataType.toString()
         supportActionBar?.title=getString(R.string.aditif)+":"+touristDataType
-        showMenu()
-    }
-    private  fun showMenu(){
 
         binding.rvList.setHasFixedSize(true)
         binding.rvList.layoutManager= LinearLayoutManager(this)
@@ -67,8 +64,15 @@ class MenuAditifActivity : AppCompatActivity() {
                 val intent: Intent
                 when(data.title){
                     getString(R.string.menu_perhitungan)->{
-//                        intent= Intent(this@MenuAditifActivity, DataTouristAttractionActivity::class.java)
-//                        startActivity(intent)
+                        intent= Intent(this@MenuAditifActivity, DataTouristAttractionActivity::class.java)
+                        startActivity(intent)
+                    }
+                    getString(R.string.menu_grafik)->{
+                        intent= Intent(this@MenuAditifActivity, AditifChartActivity::class.java)
+
+                        intent.putExtra("idTouristDataType", idTouristDataType)
+                        intent.putExtra("touristDataType", touristDataType)
+                        startActivity(intent)
                     }
                 }
             }

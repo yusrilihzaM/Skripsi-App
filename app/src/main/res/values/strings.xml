@@ -69,6 +69,7 @@
     <string name="fail_future">Belum Bisa Melakukan Peramalan Periode Masa Depan, Model Peramalan Belum Di Hitung</string>
     <string name="edtperiodmust">Periode Harus Di Isi</string>
     <string name="aditif">Aditif</string>
+    <string name="grafik">Grafik</string>
     <string name="mulitplikatif">Mulitplikatif</string>
     <string name="fail_future_forecast">Gagal Melakukan Peramalan</string>
     <string name="anda_dapat">. Anda Dapat Meramalkan Periode Yang Akan Datang</string>
