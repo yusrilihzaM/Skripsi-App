@@ -68,6 +68,8 @@
     <string name="suc_future">Peramalan Periode Masa Depan Berhasil</string>
     <string name="fail_future">Belum Bisa Melakukan Peramalan Periode Masa Depan, Model Peramalan Belum Di Hitung</string>
     <string name="edtperiodmust">Periode Harus Di Isi</string>
+    <string name="aditif">Aditif</string>
+    <string name="mulitplikatif">Mulitplikatif</string>
     <string name="fail_future_forecast">Gagal Melakukan Peramalan</string>
     <string name="anda_dapat">. Anda Dapat Meramalkan Periode Yang Akan Datang</string>
     <string-array name="data_title_menu">
@@ -86,5 +88,31 @@
         <item>@drawable/ic_ramal</item>
         <item>@drawable/ic_aditif</item>
         <item>@drawable/ic_multiplikatif</item>
+    </array>
+    <string name="menu_perhitungan">Perhitungan Manual</string>
+    <string name="menu_peramalan">Peramalan Periode Selanjutnya</string>
+    <string name="menu_evaluasi">Evaluasi Model Peramalan</string>
+    <string name="menu_grafik">Grafik</string>
+    <string name="sub_menu_perhitungan">Berisi mengenai perhitungan manual dari model peramalan</string>
+    <string name="sub_menu_peramalan">Berisi mengenai hasil peramalan periode yang akan datang</string>
+    <string name="sub_menu_evaluasi">Berisi mengenai hasil evaluasi perhitungan model peramalan</string>
+    <string name="sub_menu_grafik">Berisi mengenai grafik hasil peramalan dan data asli</string>
+    <string-array name="data_title_menu_forecast">
+        <item>@string/menu_perhitungan</item>
+        <item>@string/menu_evaluasi</item>
+        <item>@string/menu_grafik</item>
+        <item>@string/menu_peramalan</item>
+    </string-array>
+    <string-array name="data_sub_title_menu_forecast">
+        <item>@string/sub_menu_perhitungan</item>
+        <item>@string/sub_menu_evaluasi</item>
+        <item>@string/sub_menu_grafik</item>
+        <item>@string/sub_menu_peramalan</item>
+    </string-array>
+    <array name="data_ic_forecast">
+        <item>@drawable/ic_data_pengunjung</item>
+        <item>@drawable/ic_tempat_wisata</item>
+        <item>@drawable/ic_calculate</item>
+        <item>@drawable/ic_ramal</item>
     </array>
 </resources>

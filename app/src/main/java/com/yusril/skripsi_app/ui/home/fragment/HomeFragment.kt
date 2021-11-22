@@ -14,9 +14,11 @@ import com.yusril.skripsi_app.adapter.HomeListAdapter
 import com.yusril.skripsi_app.databinding.FragmentHomeBinding
 import com.yusril.skripsi_app.entity.Menu
 import com.yusril.skripsi_app.ui.TouristDataType.activity.TouristDataTypeActivity
+import com.yusril.skripsi_app.ui.aditif.activity.AditifDataTypeActivity
 import com.yusril.skripsi_app.ui.calculate.activity.CalculateActivity
 import com.yusril.skripsi_app.ui.datatourist.activity.DataTouristAttractionActivity
 import com.yusril.skripsi_app.ui.forecastFuture.activity.ForecastFutureActivity
+import com.yusril.skripsi_app.ui.multiplikatif.activity.MultiplikatifDataTypeActivity
 
 
 class HomeFragment : Fragment() {
@@ -71,6 +73,16 @@ class HomeFragment : Fragment() {
                     }
                     getString(R.string.menu_ramal)->{
                         intent= Intent(context, ForecastFutureActivity::class.java)
+                        startActivity(intent)
+                        activity?.finish()
+                    }
+                    getString(R.string.menu_aditif)->{
+                        intent= Intent(context, AditifDataTypeActivity::class.java)
+                        startActivity(intent)
+                        activity?.finish()
+                    }
+                    getString(R.string.menu_multiplikatif)->{
+                        intent= Intent(context, MultiplikatifDataTypeActivity::class.java)
                         startActivity(intent)
                         activity?.finish()
                     }
