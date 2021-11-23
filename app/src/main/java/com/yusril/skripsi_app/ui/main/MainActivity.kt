@@ -1,5 +1,6 @@
 package com.yusril.skripsi_app.ui.main
 
+import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.yusril.skripsi_app.R
@@ -20,6 +21,7 @@ class MainActivity : AppCompatActivity() {
             .beginTransaction()
             .add(R.id.container, homeFragment)
             .commit()
+        requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
         binding.bottomNavigation.setItemSelected(R.id.home,true)
         binding.bottomNavigation.setOnItemSelectedListener { id->
             when(id){

@@ -74,6 +74,20 @@ class MenuAditifActivity : AppCompatActivity() {
                         intent.putExtra("touristDataType", touristDataType)
                         startActivity(intent)
                     }
+                    getString(R.string.menu_evaluasi)->{
+                        intent= Intent(this@MenuAditifActivity, AditifEvaluationActivity::class.java)
+
+                        intent.putExtra("idTouristDataType", idTouristDataType)
+                        intent.putExtra("touristDataType", touristDataType)
+                        startActivity(intent)
+                    }
+                    getString(R.string.menu_ramal)->{
+                        intent= Intent(this@MenuAditifActivity, AditifFuturePredictionActivity::class.java)
+
+                        intent.putExtra("idTouristDataType", idTouristDataType)
+                        intent.putExtra("touristDataType", touristDataType)
+                        startActivity(intent)
+                    }
                 }
             }
         })

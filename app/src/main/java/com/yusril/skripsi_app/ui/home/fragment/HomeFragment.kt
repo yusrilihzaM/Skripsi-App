@@ -1,6 +1,7 @@
 package com.yusril.skripsi_app.ui.home.fragment
 
 import android.content.Intent
+import android.content.pm.ActivityInfo
 import android.content.res.TypedArray
 import android.os.Bundle
 import androidx.fragment.app.Fragment

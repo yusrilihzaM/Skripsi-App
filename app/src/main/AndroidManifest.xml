@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SkripsiAPp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.aditif.activity.AditifChartActivity"></activity>
+        <activity android:name=".ui.aditif.activity.AditifFuturePredictionActivity"></activity>
+        <activity android:name=".ui.aditif.activity.AditifEvaluationActivity" />
+        <activity android:name=".ui.aditif.activity.AditifChartActivity" />
         <activity android:name=".ui.aditif.activity.MenuAditifActivity" />
         <activity android:name=".ui.multiplikatif.activity.MultiplikatifDataTypeActivity" />
         <activity android:name=".ui.aditif.activity.AditifDataTypeActivity" />

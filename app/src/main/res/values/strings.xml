@@ -98,6 +98,11 @@
     <string name="sub_menu_peramalan">Berisi mengenai hasil peramalan periode yang akan datang</string>
     <string name="sub_menu_evaluasi">Berisi mengenai hasil evaluasi perhitungan model peramalan</string>
     <string name="sub_menu_grafik">Berisi mengenai grafik hasil peramalan dan data asli</string>
+    <string name="hasil_evaluasi_model_peramalan_aditif">Hasil Evaluasi Model Peramalan Aditif -</string>
+    <string name="tracking_signal">Tracking Signal</string>
+    <string name="mean_absolute_percentage_mape">Mean Absolute Percentage</string>
+    <string name="error">Error</string>
+    <string name="mean_absolute_deviation">Mean Absolute Deviation</string>
     <string-array name="data_title_menu_forecast">
         <item>@string/menu_perhitungan</item>
         <item>@string/menu_evaluasi</item>
@@ -111,9 +116,9 @@
         <item>@string/sub_menu_peramalan</item>
     </string-array>
     <array name="data_ic_forecast">
-        <item>@drawable/ic_data_pengunjung</item>
-        <item>@drawable/ic_tempat_wisata</item>
-        <item>@drawable/ic_calculate</item>
-        <item>@drawable/ic_ramal</item>
+        <item>@drawable/ic_hitung_manual</item>
+        <item>@drawable/ic_eval</item>
+        <item>@drawable/ic_grafik</item>
+        <item>@drawable/ic_ramal_masa</item>
     </array>
 </resources>

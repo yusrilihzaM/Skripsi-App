@@ -26,6 +26,8 @@ android {
             it.buildConfigField "String", "URL_COUNT_FORECAST",URL_COUNT_FORECAST
             it.buildConfigField "String", "URL_FORECAST_FUTURE",URL_FORECAST_FUTURE
             it.buildConfigField "String", "URL_CHART",URL_CHART
+            it.buildConfigField "String", "URL_EVALUATION",URL_EVALUATION
+            it.buildConfigField "String", "URL_MANUAL",URL_MANUAL
         }
     }
 

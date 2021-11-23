@@ -217,6 +217,9 @@ class TouristDataTypeViewModel: ViewModel() {
         })
     }
 
+    fun getTouristDataType(): LiveData<ArrayList<DataTouristTypeItem>> {
+        return listTouristDataType
+    }
     fun getStatusAddTouristDataType(): LiveData<ArrayList<Status>> {
         return statusAddTouristDataType
     }
@@ -226,8 +229,6 @@ class TouristDataTypeViewModel: ViewModel() {
     fun getStatusDelTouristDataType(): LiveData<ArrayList<Status>> {
         return statusDeleteTouristDataType
     }
-    fun getTouristDataType(): LiveData<ArrayList<DataTouristTypeItem>> {
-        return listTouristDataType
-    }
+
 
 }
