@@ -30,7 +30,7 @@ class MultiplikatifEvaluationActivity : AppCompatActivity() {
         idTouristDataType= intent.getIntExtra("idTouristDataType",0)
         supportActionBar?.title=getString(R.string.hasil_evaluasi_model_peramalan_multiplikatif)+"$idTouristDataType"
         binding.tvTitle.text=getString(R.string.hasil_evaluasi_model_peramalan_multiplikatif)+" $touristDataType"
-        evaluationModel.setEvaluationBy(idTouristDataType,1)
+        evaluationModel.setEvaluationBy(idTouristDataType,2)
         evaluationModel.getEvaluationBy().observe(this,{dataItem->
             Log.d("setEvaluationBy1", dataItem.toString())
             binding.spinKit.visibility = View.GONE

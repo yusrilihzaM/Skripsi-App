@@ -50,7 +50,7 @@ class MenuMultiplikatifActivity : AppCompatActivity() {
         touristDataType= data.touristDataType.toString()
         idTouristDataType= data.idTouristDataType?.toInt()!!
         dataType= data.dataType.toString()
-        supportActionBar?.title=getString(R.string.aditif)+":"+touristDataType
+        supportActionBar?.title=getString(R.string.mulitplikatif)+":"+touristDataType
 
         binding.rvList.setHasFixedSize(true)
         binding.rvList.layoutManager= LinearLayoutManager(this)

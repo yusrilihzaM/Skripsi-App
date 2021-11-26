@@ -3,6 +3,7 @@ package com.yusril.skripsi_app.ui.multiplikatif.activity
 import android.content.pm.ActivityInfo
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.webkit.WebChromeClient
 import android.webkit.WebView
@@ -37,7 +38,7 @@ class MultiplikatifChartActivity : AppCompatActivity() {
         touristDataType= intent.getStringExtra("touristDataType").toString()
         idTouristDataType= intent.getIntExtra("idTouristDataType",0)
 
-        supportActionBar?.title=getString(R.string.grafik)+" "+getString(R.string.aditif)+"-"+":"+touristDataType
+        supportActionBar?.title=getString(R.string.grafik)+" "+getString(R.string.mulitplikatif)+"-"+":"+touristDataType
         binding.webView.webViewClient = object : WebViewClient() {
 
             override fun onPageFinished(view: WebView, url: String) {
@@ -52,5 +53,18 @@ class MultiplikatifChartActivity : AppCompatActivity() {
             }
         }
         binding.webView.loadUrl("${URL_CHART}$idTouristDataType/2")
+    }
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            16908332->{
+                this.finish()
+                true
+            }
+            else -> true
+        }
+    }
+    override fun onBackPressed() {
+        super.onBackPressed()
+        finish()
     }
 }
