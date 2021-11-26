@@ -13,7 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SkripsiAPp"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ui.multiplikatif.activity.MultiplikatifEvaluationActivity"></activity>
+        <activity android:name=".ui.multiplikatif.activity.MultiplikatifChartActivity"></activity>
+        <activity android:name=".ui.multiplikatif.activity.MultiplikatifEvaluationActivity" />
         <activity android:name=".ui.multiplikatif.activity.MultiplikatifFuturePredictionActivity" />
         <activity android:name=".ui.multiplikatif.activity.MultiplikatifManualActivity" />
         <activity android:name=".ui.multiplikatif.activity.MenuMultiplikatifActivity" />

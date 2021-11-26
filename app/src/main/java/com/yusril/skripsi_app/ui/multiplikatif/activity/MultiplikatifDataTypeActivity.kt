@@ -14,8 +14,10 @@ import com.yusril.skripsi_app.adapter.DataTypeListAdapter
 import com.yusril.skripsi_app.databinding.ActivityAditifDataTypeBinding
 import com.yusril.skripsi_app.databinding.ActivityMultiplikatifDataTypeBinding
 import com.yusril.skripsi_app.response.DataTouristTypeItem
+import com.yusril.skripsi_app.ui.aditif.activity.MenuAditifActivity
 import com.yusril.skripsi_app.ui.datatourist.viewmodel.DataTouristViewModel
 import com.yusril.skripsi_app.ui.main.MainActivity
+import com.yusril.skripsi_app.ui.multiplikatif.activity.MenuMultiplikatifActivity.Companion.EXTRA_DATA_FORECASTING_MULTIPLIKATIF
 
 class MultiplikatifDataTypeActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMultiplikatifDataTypeBinding
@@ -53,11 +55,11 @@ class MultiplikatifDataTypeActivity : AppCompatActivity() {
             swipeContainer.isRefreshing = false
             dataTypeListAdapter.setOnItemClickCallback(object :DataTypeListAdapter.OnItemClickCallback{
                 override fun onItemClicked(dataType: DataTouristTypeItem) {
-//                    val intent = Intent(this@TouristDataTypeActivity,
-//                        EditTouristDataTypeMainActivity::class.java)
-//                    intent.putExtra(EditTouristDataTypeMainActivity.EXTRA_DATA, dataType)
-//                    startActivity(intent)
-//                    finish()
+                    val intent = Intent(this@MultiplikatifDataTypeActivity,
+                        MenuMultiplikatifActivity::class.java)
+                    intent.putExtra(EXTRA_DATA_FORECASTING_MULTIPLIKATIF, dataType)
+                    startActivity(intent)
+                    finish()
                 }
 
             })
