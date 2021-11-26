@@ -101,8 +101,24 @@
     <string name="hasil_evaluasi_model_peramalan_aditif">Hasil Evaluasi Model Peramalan Aditif -</string>
     <string name="tracking_signal">Tracking Signal</string>
     <string name="mean_absolute_percentage_mape">Mean Absolute Percentage</string>
-    <string name="error">Error</string>
+
     <string name="mean_absolute_deviation">Mean Absolute Deviation</string>
+    <string name="number">No.</string>
+    <string name="t">t</string>
+    <string name="ctdma">CTDMA</string>
+    <string name="mape">MAPE</string>
+    <string name="mad">MAD</string>
+    <string name="error">Error</string>
+    <string name="adjusted_forecast">Adjusted Forecast</string>
+    <string name="unadjusted_forecast">Unadjusted Forecast</string>
+    <string name="smoothed">Smoothed</string>
+    <string name="seasonal">Seasonal</string>
+    <string name="ratio">Ratio</string>
+    <string name="perhitungan">Perhitungan Manual</string>
+    <string name="hasil_perhitungan_dekomposisi_aditif">Hasil Perhitungan Dekomposisi Aditif -</string>
+    <string name="nomor">No.</string>
+    <string name="hasil_peramalan">Hasil Peramalan -</string>
+    <string name="not_found_data_future">\"Data Peramalan Tidak Ada, Belum Melakukan Peramalan \"</string>
     <string-array name="data_title_menu_forecast">
         <item>@string/menu_perhitungan</item>
         <item>@string/menu_evaluasi</item>

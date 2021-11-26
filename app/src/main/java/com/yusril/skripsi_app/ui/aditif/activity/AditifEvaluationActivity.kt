@@ -2,6 +2,7 @@ package com.yusril.skripsi_app.ui.aditif.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MenuItem
 import android.view.View
 import androidx.lifecycle.ViewModelProvider
@@ -32,6 +33,7 @@ class AditifEvaluationActivity : AppCompatActivity() {
         binding.tvTitle.text=getString(R.string.hasil_evaluasi_model_peramalan_aditif)+" $touristDataType"
         evaluationModel.setEvaluationBy(idTouristDataType,1)
         evaluationModel.getEvaluationBy().observe(this,{dataItem->
+            Log.d("setEvaluationBy1", dataItem.toString())
             binding.spinKit.visibility = View.GONE
             binding.mape.text=dataItem[0].mape
             binding.mad.text=dataItem[0].mad

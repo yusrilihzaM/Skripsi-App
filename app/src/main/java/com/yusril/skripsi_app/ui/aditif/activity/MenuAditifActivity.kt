@@ -64,7 +64,9 @@ class MenuAditifActivity : AppCompatActivity() {
                 val intent: Intent
                 when(data.title){
                     getString(R.string.menu_perhitungan)->{
-                        intent= Intent(this@MenuAditifActivity, DataTouristAttractionActivity::class.java)
+                        intent= Intent(this@MenuAditifActivity, AditifManualActivity::class.java)
+                        intent.putExtra("idTouristDataType", idTouristDataType)
+                        intent.putExtra("touristDataType", touristDataType)
                         startActivity(intent)
                     }
                     getString(R.string.menu_grafik)->{
@@ -81,7 +83,7 @@ class MenuAditifActivity : AppCompatActivity() {
                         intent.putExtra("touristDataType", touristDataType)
                         startActivity(intent)
                     }
-                    getString(R.string.menu_ramal)->{
+                    getString(R.string.menu_peramalan)->{
                         intent= Intent(this@MenuAditifActivity, AditifFuturePredictionActivity::class.java)
 
                         intent.putExtra("idTouristDataType", idTouristDataType)

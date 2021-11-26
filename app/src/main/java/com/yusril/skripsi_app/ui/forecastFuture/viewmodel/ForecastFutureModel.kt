@@ -4,17 +4,13 @@ import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.google.gson.annotations.SerializedName
 import com.loopj.android.http.AsyncHttpClient
 import com.loopj.android.http.AsyncHttpResponseHandler
 import com.loopj.android.http.RequestParams
 import com.yusril.skripsi_app.BuildConfig
-import com.yusril.skripsi_app.entity.CountData
 import com.yusril.skripsi_app.entity.Status
 import com.yusril.skripsi_app.response.DataFutureByTypeMethodItem
-import com.yusril.skripsi_app.response.DataTouristItem
-import com.yusril.skripsi_app.ui.calculate.ViewModel.CalculateVIewModel
-import com.yusril.skripsi_app.ui.datatourist.viewmodel.DataTouristViewModel
-import com.yusril.skripsi_app.ui.forecastFuture.viewmodel.ForecastFutureModel.Companion.URL_FORECAST_FUTURE
 import cz.msebera.android.httpclient.Header
 import org.json.JSONObject
 
@@ -68,17 +64,16 @@ class ForecastFutureModel: ViewModel() {
             }
         })
     }
-
-    fun setForecastFutureByTypeMethod(
+    fun setStatusForecastFutureByTypeMethod(
         id_tourist_data_type:Int,
         id_method_type:Int
     ){
-        val listData = ArrayList<DataFutureByTypeMethodItem>()
         val client = AsyncHttpClient()
         val params = RequestParams()
         params.put("id_tourist_data_type", id_tourist_data_type)
         params.put("id_method_type", id_method_type)
         val url= URL_FORECAST_FUTURE
+        val listItems = ArrayList<Status>()
         client.get(url,object:
             AsyncHttpResponseHandler(){
             override fun onSuccess(
@@ -89,10 +84,57 @@ class ForecastFutureModel: ViewModel() {
                 try {
                     val result = String(responseBody)
                     val jsonObject = JSONObject(result)
+
+                    Log.d("setStatusForecastFuture", result.toString())
+                    Log.d("setStatusForecastFuture", jsonObject.toString())
+                    val status_data:Boolean= jsonObject["status"] as Boolean
+                    val status=Status(
+                        status_data
+                    )
+                    listItems.add(status)
+                    statusForecastFuture.postValue(listItems)
+                    Log.d("setStatusForecastFuture", status.toString())
+                } catch (e: Exception) {
+                    e.printStackTrace()
+                }
+            }
+
+            override fun onFailure(
+                statusCode: Int,
+                headers: Array<out Header>?,
+                responseBody: ByteArray?,
+                error: Throwable?
+            ) {
+                Log.d("setStatusForecastFutureFail", error.toString())
+            }
+        }
+        )
+    }
+    fun setForecastFutureByTypeMethod(
+        id_tourist_data_type:Int,
+        id_method_type:Int
+    ){
+        val listData = ArrayList<DataFutureByTypeMethodItem>()
+        val client = AsyncHttpClient()
+        val params = RequestParams()
+        params.put("id_tourist_data_type", id_tourist_data_type)
+        params.put("id_method_type", id_method_type)
+        val url= URL_FORECAST_FUTURE
+//        val url="http://192.168.100.6/skripsi-rest-forecasting/api/Future?id_tourist_data_type=1&id_method_type=1"
+        client.get(url,params,object:
+            AsyncHttpResponseHandler(){
+            override fun onSuccess(
+                statusCode: Int,
+                headers: Array<out Header>?,
+                responseBody: ByteArray
+            ) {
+                try {
+                    val result = String(responseBody)
+                    val jsonObject = JSONObject(result)
                     val dataArray = jsonObject.getJSONArray("data_future")
-                    Log.d("setForecastFutureByTypeMethod", result.toString())
-                    Log.d("setForecastFutureByTypeMethod", dataArray.toString())
-                    Log.d("setForecastFutureByTypeMethod", dataArray.length().toString())
+                    Log.d("setForecastFutureBy1", result.toString())
+                    Log.d("setForecastFutureBy2", jsonObject.toString())
+                    Log.d("setForecastFutureBy3", dataArray.toString())
                     for (i in 0 until dataArray.length()) {
                         val dataItem = dataArray.getJSONObject(i)
                         Log.d("dataItem", i.toString())
@@ -108,17 +150,18 @@ class ForecastFutureModel: ViewModel() {
                         val id_method_type=dataItem.getString("id_method_type")
                         val dataTouristItem= DataFutureByTypeMethodItem(
                             no.toString(),
-                            idForecastFuture,
-                            month,
-                            year_future,
                             t_future,
-                            id_seasonal_index,
-                            unadjusted_forecast,
+                            month,
+                            id_method_type,
                             adjusted_forecast,
                             id_tourist_data_type,
-                            id_method_type
+                            id_seasonal_index,
+                            unadjusted_forecast,
+                            idForecastFuture,
+                            year_future
                         )
                         listData.add(dataTouristItem)
+                        Log.d("setForecastFutureBy4", idForecastFuture.toString())
                     }
                     ForecastFutureByDataType.postValue(listData)
                     Log.d("Dataaaa", listData.toString())

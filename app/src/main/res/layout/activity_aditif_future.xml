@@ -3,46 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <TextView
-        android:id="@+id/title"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="@dimen/size_8"
-        android:background="@color/blue"
-        android:fontFamily="@font/poppins_medium"
-        android:text="@string/hasil_peramalan"
-        android:textColor="@color/white"
-        android:gravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    android:layout_height="match_parent"
+    tools:context=".response.AditifFutureActivity">
 
-    <ImageView
-        android:id="@+id/noData"
-        android:layout_width="match_parent"
-        android:layout_height="350dp"
-        android:layout_margin="@dimen/size_16"
-        android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
-        app:layout_constraintVertical_bias="0.0" />
-
-    <TextView
-        android:id="@+id/tvnodata"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:fontFamily="@font/poppins"
-        android:gravity="center"
-        android:text="@string/tidak_ada_data"
-        android:visibility="invisible"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/noData" />
     <LinearLayout
         android:id="@+id/ln"
         android:layout_width="match_parent"
@@ -52,7 +15,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0">
 
         <TextView
@@ -63,9 +26,9 @@
             android:layout_marginTop="@dimen/size_8"
             android:layout_marginBottom="@dimen/size_8"
             android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/black"
             android:gravity="center"
-            android:text="@string/nomor"
-            android:textColor="@color/black" />
+            android:text="@string/nomor" />
 
         <TextView
             android:id="@+id/tvbulan"
@@ -74,10 +37,10 @@
             android:layout_marginLeft="@dimen/size_16"
             android:layout_marginTop="@dimen/size_8"
             android:layout_marginBottom="@dimen/size_8"
+            android:textColor="@color/black"
             android:fontFamily="@font/poppins_medium"
             android:gravity="center"
-            android:text="@string/bulan"
-            android:textColor="@color/black" />
+            android:text="@string/bulan" />
 
         <TextView
             android:id="@+id/tvtahun"
@@ -87,9 +50,9 @@
             android:layout_marginTop="@dimen/size_8"
             android:layout_marginBottom="@dimen/size_8"
             android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/black"
             android:gravity="center"
-            android:text="@string/tahun"
-            android:textColor="@color/black" />
+            android:text="@string/tahun" />
 
         <TextView
             android:id="@+id/jumlah"
@@ -99,10 +62,10 @@
             android:layout_marginTop="@dimen/size_8"
             android:layout_marginBottom="@dimen/size_8"
             android:fontFamily="@font/poppins_medium"
+            android:textColor="@color/black"
             android:gravity="left"
             android:paddingLeft="@dimen/size_4"
-            android:text="@string/jumlah_wisatawan"
-            android:textColor="@color/black" />
+            android:text="@string/jumlah_wisatawan" />
     </LinearLayout>
 
     <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
@@ -115,7 +78,7 @@
         app:layout_constraintTop_toBottomOf="@+id/ln">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rvList"
+            android:id="@+id/rvListTourist"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
@@ -130,7 +93,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title">
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
