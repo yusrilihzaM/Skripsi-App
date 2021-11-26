@@ -99,6 +99,7 @@
     <string name="sub_menu_evaluasi">Berisi mengenai hasil evaluasi perhitungan model peramalan</string>
     <string name="sub_menu_grafik">Berisi mengenai grafik hasil peramalan dan data asli</string>
     <string name="hasil_evaluasi_model_peramalan_aditif">Hasil Evaluasi Model Peramalan Aditif -</string>
+    <string name="hasil_evaluasi_model_peramalan_multiplikatif">Hasil Evaluasi Model Peramalan Multiplikatif -</string>
     <string name="tracking_signal">Tracking Signal</string>
     <string name="mean_absolute_percentage_mape">Mean Absolute Percentage</string>
 
