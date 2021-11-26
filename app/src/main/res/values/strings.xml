@@ -116,6 +116,7 @@
     <string name="ratio">Ratio</string>
     <string name="perhitungan">Perhitungan Manual</string>
     <string name="hasil_perhitungan_dekomposisi_aditif">Hasil Perhitungan Dekomposisi Aditif -</string>
+    <string name="hasil_perhitungan_dekomposisi_multiplikatif">Hasil Perhitungan Dekomposisi Multiplikatif -</string>
     <string name="nomor">No.</string>
     <string name="hasil_peramalan">Hasil Peramalan -</string>
     <string name="not_found_data_future">\"Data Peramalan Tidak Ada, Belum Melakukan Peramalan \"</string>
