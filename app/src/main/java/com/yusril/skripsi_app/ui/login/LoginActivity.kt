@@ -34,6 +34,9 @@ class LoginActivity : AppCompatActivity() {
         authViewModel= ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(AuthViewModel::class.java)
 //        authViewModel.setStatusMessage("admin@admin","admin")
         binding.btnLogin.setOnClickListener{
+            val view = this.currentFocus
+            val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
+            imm.hideSoftInputFromWindow(view!!.windowToken, 0)
             binding.btnLogin.startAnimation()
             val email=binding.edtEmail.text.toString()
             val password=binding.edtPassword.text.toString()
@@ -66,9 +69,7 @@ class LoginActivity : AppCompatActivity() {
                     if (dataItem[0].status){
                         authViewModel.setLogin(email,password)
                         authViewModel.getLogin().observe(this,{dataUser->
-                            val view = this.currentFocus
-                            val imm = getSystemService(INPUT_METHOD_SERVICE) as InputMethodManager
-                            imm.hideSoftInputFromWindow(view!!.windowToken, 0)
+
                             saveSession(
                                 dataUser[0].email.toString(),
                                 dataUser[0].password.toString(),
@@ -79,7 +80,7 @@ class LoginActivity : AppCompatActivity() {
                             getString(R.string.login),
                             getString(R.string.berhasil)
                         )
-                        moveIntent()
+
                     }else
                     if (!dataItem[0].status){
                         if (dataItem[0].message=="Password failed"){
@@ -111,7 +112,7 @@ class LoginActivity : AppCompatActivity() {
         message:String
     ){
         if(type=="Success"){
-            AestheticDialog.Builder(this@LoginActivity, DialogStyle.FLAT, DialogType.SUCCESS)
+            AestheticDialog.Builder(this@LoginActivity, DialogStyle.TOASTER, DialogType.SUCCESS)
                 .setTitle(title)
                 .setMessage(message)
                 .setCancelable(false)
@@ -121,14 +122,14 @@ class LoginActivity : AppCompatActivity() {
                 .setOnClickListener(object : OnDialogClickListener {
                     override fun onClick(dialog: AestheticDialog.Builder) {
                         dialog.dismiss()
-
+                        moveIntent()
                         finish()
                         //actions...
                     }
                 })
                 .show()
         }else{
-            AestheticDialog.Builder(this@LoginActivity, DialogStyle.FLAT, DialogType.ERROR)
+            AestheticDialog.Builder(this@LoginActivity, DialogStyle.TOASTER, DialogType.ERROR)
                 .setTitle(title)
                 .setMessage(message)
                 .setCancelable(false)
