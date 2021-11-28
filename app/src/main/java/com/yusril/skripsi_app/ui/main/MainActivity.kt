@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.yusril.skripsi_app.R
 import com.yusril.skripsi_app.databinding.ActivityMainBinding
+import com.yusril.skripsi_app.ui.account.AccountFragment
 import com.yusril.skripsi_app.ui.home.fragment.HomeFragment
 
 class MainActivity : AppCompatActivity() {
@@ -21,6 +22,12 @@ class MainActivity : AppCompatActivity() {
             .beginTransaction()
             .add(R.id.container, homeFragment)
             .commit()
+
+        if (savedInstanceState == null) {
+            val fragment =HomeFragment()
+            supportFragmentManager.beginTransaction().replace(R.id.container, fragment, fragment.javaClass.getSimpleName())
+                .commit()
+        }
         requestedOrientation = ActivityInfo.SCREEN_ORIENTATION_PORTRAIT;
         binding.bottomNavigation.setItemSelected(R.id.home,true)
         binding.bottomNavigation.setOnItemSelectedListener { id->
@@ -33,11 +40,11 @@ class MainActivity : AppCompatActivity() {
                 }
 
                 R.id.akun->{
-//                    val adminAkunFragment = AdminAkunFragment()
-//                    fragmentManager
-//                        .beginTransaction()
-//                        .replace(R.id.container, adminAkunFragment)
-//                        .commit()
+                    val accountFragment = AccountFragment()
+                    fragmentManager
+                        .beginTransaction()
+                        .replace(R.id.container, accountFragment)
+                        .commit()
                 }
             }
 

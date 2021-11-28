@@ -5,11 +5,11 @@
         android:id="@+id/home"
         android:icon="@drawable/ic_home"
         android:title="@string/beranda"
-        app:cnb_iconColor="@color/yellow"/>
+        app:cnb_iconColor="@color/purple_500"/>
 
     <item
         android:id="@+id/akun"
         android:icon="@drawable/ic_account"
         android:title="@string/akun"
-        app:cnb_iconColor="@color/green" />
+        app:cnb_iconColor="@color/purple_500" />
 </menu>

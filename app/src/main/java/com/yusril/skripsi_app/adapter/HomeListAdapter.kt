@@ -44,7 +44,7 @@ class HomeListAdapter(private val List: ArrayList<Menu>): RecyclerView.Adapter<L
     }
 
     override fun getItemCount(): Int {
-        return List.size
+        return 6
     }
     interface OnItemClickCallback {
         fun onItemClicked(data: Menu)

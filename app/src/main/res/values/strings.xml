@@ -121,6 +121,40 @@
     <string name="nomor">No.</string>
     <string name="hasil_peramalan">Hasil Peramalan -</string>
     <string name="not_found_data_future">\"Data Peramalan Tidak Ada, Belum Melakukan Peramalan \"</string>
+    <string name="key_localization">key_localization</string>
+    <string name="ganti_bahasa">Ganti bahasa</string>
+    <string name="info_app">info_app</string>
+    <string name="languange_change">Bahasa yang tersedia hanya\ninggris dan indonesia</string>
+    <string name="info">Info</string>
+    <string name="languange">language</string>
+    <string name="profile">profile</string>
+    <string name="profile_akun">Profil Akun</string>
+    <string name="profile_summary">Lihat profil akunmu</string>
+    <string name="profil">Profil</string>
+    <string name="info_summary">Berisi seputar aplikasi</string>
+    <string name="tentang_aplikasi">Tentang Aplikasi</string>
+    <string name="Logout">Logout</string>
+    <string name="key_info_app">key_info_app</string>
+    <string name="key_logout">key_logout</string>
+    <string name="keluar">Keluar</string>
+    <string name="logout_summary">Ketuk disini untuk keluar dari aplikasi</string>
+    <string name="admin">Admin</string>
+    <string name="masuk">Masuk</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="silakan_masuk_untuk_melanjutkan">Silakan masuk untuk melanjutkan</string>
+    <string name="s1_sistem_informasi_universitas_trunojoyo_madura">S1 Sistem Informasi - Universitas Trunojoyo Madura</string>
+    <string name="username_must">Username harus di isi</string>
+    <string name="password_must">Password harus di isi</string>
+    <string name="username_password_must">Username dan Password harus di isi</string>
+    <string name="email">Email</string>
+    <string name="email_must">Email harus di isi</string>
+    <string name="email_password_must">Email dan Password harus di isi</string>
+    <string name="wrong__password">Password salah</string>
+    <string name="email_not_found">Email tidak ada</string>
+    <string name="login">Login</string>
+    <string name="fail_login">Masuk gagal</string>
+    <string name="berhasil">Berhasil</string>
     <string-array name="data_title_menu_forecast">
         <item>@string/menu_perhitungan</item>
         <item>@string/menu_evaluasi</item>
@@ -138,5 +172,24 @@
         <item>@drawable/ic_eval</item>
         <item>@drawable/ic_grafik</item>
         <item>@drawable/ic_ramal_masa</item>
+    </array>
+
+
+
+    <string-array name="data_title_settings">
+        <item>@string/ganti_bahasa</item>
+        <item>@string/tentang_aplikasi</item>
+        <item>@string/keluar</item>
+    </string-array>
+    <string-array name="data_sub_title_settings">
+        <item>@string/languange_change</item>
+        <item>@string/info_summary</item>
+        <item>@string/logout_summary</item>
+    </string-array>
+    <array name="data_ic_settings">
+        <item>@drawable/ic_translate</item>
+        <item>@drawable/ic_info_app</item>
+        <item>@drawable/ic_logout</item>
+
     </array>
 </resources>

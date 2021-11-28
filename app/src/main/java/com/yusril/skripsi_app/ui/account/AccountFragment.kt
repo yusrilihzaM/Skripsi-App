@@ -1,33 +1,42 @@
 package com.yusril.skripsi_app.ui.account
 
+import android.content.Intent
+import android.content.res.TypedArray
 import android.os.Bundle
+import android.provider.Settings
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.yusril.skripsi_app.R
+import com.yusril.skripsi_app.adapter.HomeListAdapter
+import com.yusril.skripsi_app.adapter.MenuForecastListAdapter
+import com.yusril.skripsi_app.adapter.MenuSettingsListAdapter
+import com.yusril.skripsi_app.databinding.FragmentAccountBinding
+import com.yusril.skripsi_app.databinding.FragmentHomeBinding
+import com.yusril.skripsi_app.entity.Menu
+import com.yusril.skripsi_app.entity.MenuForecast
+import com.yusril.skripsi_app.ui.TouristDataType.activity.TouristDataTypeActivity
+import com.yusril.skripsi_app.ui.aditif.activity.AditifDataTypeActivity
+import com.yusril.skripsi_app.ui.calculate.activity.CalculateActivity
+import com.yusril.skripsi_app.ui.datatourist.activity.DataTouristAttractionActivity
+import com.yusril.skripsi_app.ui.forecastFuture.activity.ForecastFutureActivity
+import com.yusril.skripsi_app.ui.multiplikatif.activity.MultiplikatifDataTypeActivity
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
 
-/**
- * A simple [Fragment] subclass.
- * Use the [AccountFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class AccountFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
-
+    private lateinit var menuSettingsListAdapter: MenuSettingsListAdapter
+    private lateinit var binding: FragmentAccountBinding
+    private lateinit var dataTitle: Array<String>
+    private lateinit var dataSubTitle: Array<String>
+    private lateinit var dataIc: TypedArray
+    private lateinit var homeListAdapter: HomeListAdapter
+    private var list: ArrayList<MenuForecast> = arrayListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
-        }
+
     }
 
     override fun onCreateView(
@@ -38,23 +47,55 @@ class AccountFragment : Fragment() {
         return inflater.inflate(R.layout.fragment_account, container, false)
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment AccountFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            AccountFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding= FragmentAccountBinding.bind(view)
+
+        showMenu()
+    }
+
+    private  fun showMenu(){
+        binding.rvList.setHasFixedSize(true)
+        binding.rvList.layoutManager= LinearLayoutManager(context)
+        list.addAll(getListMenu())
+        menuSettingsListAdapter=MenuSettingsListAdapter(getListMenu())
+        binding.rvList.adapter=menuSettingsListAdapter
+
+        menuSettingsListAdapter.setOnItemClickCallback(object :MenuSettingsListAdapter.OnItemClickCallback{
+            override fun onItemClicked(data: MenuForecast) {
+                val intent: Intent
+                when(data.title){
+                    getString(R.string.ganti_bahasa)->{
+                        startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
+
+                    }
+                    getString(R.string.tentang_aplikasi)->{
+//                        intent= Intent(context, DataTouristAttractionActivity::class.java)
+//                        startActivity(intent)
+
+                    }
+                    getString(R.string.keluar)->{
+//                        intent= Intent(context, DataTouristAttractionActivity::class.java)
+//                        startActivity(intent)
+
+                    }
                 }
             }
+        })
+    }
+    private fun getListMenu(): ArrayList<MenuForecast> {
+        val listMenu= ArrayList<MenuForecast>()
+        dataTitle = resources.getStringArray(R.array.data_title_settings)
+        dataSubTitle = resources.getStringArray(R.array.data_sub_title_settings)
+        dataIc = resources.obtainTypedArray(R.array.data_ic_settings)
+        for(position in dataTitle.indices){
+            val menu= MenuForecast(
+                dataTitle[position],
+                dataSubTitle[position],
+                dataIc.getResourceId(position, -1)
+            )
+            listMenu.add(menu)
+        }
+        return listMenu
     }
 }

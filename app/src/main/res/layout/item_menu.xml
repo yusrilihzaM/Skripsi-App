@@ -5,14 +5,14 @@
 
     android:paddingTop="@dimen/size_12"
     android:clickable="true"
-    android:foreground="?android:attr/selectableItemBackground"
+    android:foreground="?android:attr/selectableItemBackgroundBorderless"
 
     android:layout_height="wrap_content">
 
     <ImageView
         android:id="@+id/ic_menu"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
         app:layout_constraintEnd_toEndOf="parent"
         android:src="@drawable/ic_data_pengunjung"
         app:layout_constraintStart_toStartOf="parent"
@@ -22,11 +22,11 @@
         android:id="@+id/title_menu"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins_medium"
+        android:fontFamily="@font/poppins"
         android:text="Tips dan Trick"
         android:gravity="center"
-        android:autoSizeMinTextSize="10sp"
-        android:autoSizeMaxTextSize="11sp"
+        android:autoSizeMinTextSize="6sp"
+        android:autoSizeMaxTextSize="7sp"
         android:layout_marginTop="@dimen/size_4"
         android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"

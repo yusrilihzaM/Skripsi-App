@@ -28,6 +28,7 @@ android {
             it.buildConfigField "String", "URL_CHART",URL_CHART
             it.buildConfigField "String", "URL_EVALUATION",URL_EVALUATION
             it.buildConfigField "String", "URL_MANUAL",URL_MANUAL
+            it.buildConfigField "String", "URL_LOGIN",URL_LOGIN
         }
     }
 
@@ -80,5 +81,5 @@ dependencies {
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
     implementation 'com.loopj.android:android-async-http:1.4.9'
     implementation 'com.github.kal72:RackMonthPicker:1.6.1'
-
+    implementation 'br.com.simplepass:loading-button-android:2.2.0'
 }

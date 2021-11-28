@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:iconSpaceReserved="false">
+
+    <PreferenceCategory
+        android:key="@string/languange"
+        android:layout="@layout/setting_preference_text_view"
+        >
+        <Preference
+            android:icon="@drawable/ic_baseline_language_24"
+            android:key="@string/key_localization"
+            android:summary="@string/languange_change"
+            android:title="@string/ganti_bahasa" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="@string/info"
+        android:layout="@layout/setting_preference_text_view"
+        >
+        <Preference
+            android:icon="@drawable/ic_info_blue_24dp"
+            android:key="@string/key_info_app"
+            android:summary="@string/info_summary"
+            android:title="@string/tentang_aplikasi" />
+    </PreferenceCategory>
+    <PreferenceCategory
+        android:key="@string/Logout"
+        android:layout="@layout/setting_preference_text_view"
+        >
+        <Preference
+            android:icon="@drawable/ic_baseline_login_24"
+            android:key="@string/key_logout"
+            android:summary="@string/logout_summary"
+            android:title="@string/keluar" />
+    </PreferenceCategory>
+</PreferenceScreen>
