@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">Skripsi-App</string>
     <string name="peramalan">Peramalan</string>
@@ -7,11 +8,7 @@
     <string name="universitas_trunojoyo">Universitas Trunojoyo Madura</string>
     <string name="beranda">Beranda</string>
     <string name="akun">Akun</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hi_selamat_datang">Selamat Datang</string>
-    <string name="bg_title" translatable="false">bg title</string>
-    <string name="ic_hello" translatable="false">ic_hello</string>
-    <string name="title">Aplikasi ini dibuat untuk memenuhi tugas akhir</string>
     <string name="menu_data">Data Wisatawan</string>
     <string name="place_data">Data Tempat Wisata</string>
     <string name="data_tempat_wisata">Data Tempat Wisata</string>
@@ -30,22 +27,15 @@
     <string name="delete_question">Apakah anda ingin menghapus?</string>
     <string name="delete_question_place">Apakah anda yakin ingin menghapus tempat wisata ini?</string>
     <string name="delete_question_tourist">Apakah anda yakin ingin menghapus data jumlah wisatawan ini?</string>
+    <string name="masukan_jumlah_pengunjung_wisata">Masukan jumlah pengunjung wisata</string>
+    <string name="jumlah_wisatawan">Jumlah Wisatawan</string>
+    <string name="touristmust">Jumlah pengunjung harus di isi</string>
     <string name="delete_place">Hapus Tempat Wisata</string>
     <string name="delete_tourist">Hapus Data Jumlah Wisatawan</string>
-    <string name="yes">Ya</string>
-    <string name="no">Tidak</string>
-    <string name="jumlah_wisatawan">Jumlah Wisatawan</string>
-    <string name="bulan">Bulan</string>
-    <string name="tahun">Tahun</string>
-    <string name="_00_0000" translatable="false">00 / 0000</string>
-    <string name="masukan_jumlah_pengunjung_wisata">Masukan jumlah pengunjung wisata</string>
-    <string name="monthyearmust">Bulan dan tahun harus terisi</string>
-    <string name="touristmust">Jumlah pengunjung harus di isi</string>
-    <string name="touristmonthyearmust">Bulan tahun dan jumlah pengunjung wisata harus di isi</string>
     <string name="data_tourist">Data Wisatawan</string>
-    <string name="suc" translatable="false">Success</string>
-    <string name="succacalculate">Berhasil di hitung</string>
-    <string name="succadd">Berhasil di tambahkan</string>
+    <string name="touristmonthyearmust">Bulan tahun dan jumlah pengunjung wisata harus di isi</string>
+    <string name="monthyearmust">Bulan dan tahun harus terisi</string>
+    <string name="title">Aplikasi ini dibuat\nuntuk memenuhi\ntugas akhir</string>
     <string name="succput">Berhasil diperbarui</string>
     <string name="failput">Gagal di perbarui</string>
     <string name="faildel">Gagal dihapus</string>
@@ -63,30 +53,13 @@
     <string name="mulai_ramal_periode_masa_depan">Mulai Ramal Periode Masa Depan</string>
     <string name="titlef_forecast_future">Ramal Periode Masa Depan</string>
     <string name="suc_future">Peramalan Periode Masa Depan Berhasil</string>
-    <string name="fail_future">Belum Bisa Melakukan Peramalan Periode Masa Depan, Model Peramalan Belum Di Hitung</string>
+    <string name="fail_future">Belum Meramal Periode Masa Depan, Model Peramalan Belum Di Hitung</string>
     <string name="edtperiodmust">Periode Harus Di Isi</string>
     <string name="aditif">Aditif</string>
     <string name="grafik">Grafik</string>
     <string name="mulitplikatif">Mulitplikatif</string>
     <string name="fail_future_forecast">Gagal Melakukan Peramalan</string>
     <string name="anda_dapat">, Anda Dapat Meramalkan Periode Yang Akan Datang</string>
-    <string-array name="data_title_menu">
-        <item>@string/menu_data</item>
-        <item>@string/place_data</item>
-        <item>@string/menu_calculate</item>
-        <item>@string/menu_ramal</item>
-        <item>@string/menu_aditif</item>
-        <item>@string/menu_multiplikatif</item>
-    </string-array>
-
-    <array name="data_ic_menu">
-        <item>@drawable/ic_data_pengunjung</item>
-        <item>@drawable/ic_tempat_wisata</item>
-        <item>@drawable/ic_calculate</item>
-        <item>@drawable/ic_ramal</item>
-        <item>@drawable/ic_aditif</item>
-        <item>@drawable/ic_multiplikatif</item>
-    </array>
     <string name="menu_perhitungan">Perhitungan Manual</string>
     <string name="menu_peramalan">Peramalan Periode Selanjutnya</string>
     <string name="menu_evaluasi">Evaluasi Model Peramalan</string>
@@ -97,81 +70,29 @@
     <string name="sub_menu_grafik">Berisi mengenai grafik hasil peramalan dan data asli</string>
     <string name="hasil_evaluasi_model_peramalan_aditif">Hasil Evaluasi Model Peramalan Aditif -</string>
     <string name="hasil_evaluasi_model_peramalan_multiplikatif">Hasil Evaluasi Model Peramalan Multiplikatif -</string>
-    <string name="tracking_signal" translatable="false">Tracking Signal</string>
-    <string name="mean_absolute_percentage_mape" translatable="false">Mean Absolute Percentage</string>
-
-    <string name="mean_absolute_deviation" translatable="false">Mean Absolute Deviation</string>
-    <string name="number" translatable="false">No.</string>
-    <string name="t" translatable="false">t</string>
-    <string name="ctdma" translatable="false">CTDMA</string>
-    <string name="mape" translatable="false">MAPE</string>
-    <string name="mad" translatable="false">MAD</string>
-    <string name="error" translatable="false">Error</string>
-    <string name="adjusted_forecast" translatable="false">Adjusted Forecast</string>
-    <string name="unadjusted_forecast" translatable="false">Unadjusted Forecast</string>
-    <string name="smoothed" translatable="false">Smoothed</string>
-    <string name="seasonal" translatable="false">Seasonal</string>
-    <string name="ratio" translatable="false">Ratio</string>
     <string name="perhitungan">Perhitungan Manual</string>
     <string name="hasil_perhitungan_dekomposisi_aditif">Hasil Perhitungan Dekomposisi Aditif -</string>
     <string name="hasil_perhitungan_dekomposisi_multiplikatif">Hasil Perhitungan Dekomposisi Multiplikatif -</string>
-    <string name="nomor" translatable="false">No.</string>
     <string name="hasil_peramalan">Hasil Peramalan -</string>
     <string name="not_found_data_future">\"Data Peramalan Tidak Ada, Belum Melakukan Peramalan \"</string>
     <string name="ganti_bahasa">Ganti bahasa</string>
-    <string name="languange_change">Bahasa yang tersedia hanya inggris dan indonesia</string>
+    <string name="languange_change">Bahasa yang tersedia\nhanya inggris dan indonesia</string>
     <string name="info_summary">Berisi seputar aplikasi</string>
     <string name="tentang_aplikasi">Tentang Aplikasi</string>
     <string name="keluar">Keluar</string>
     <string name="logout_summary">Ketuk disini untuk keluar dari aplikasi</string>
-    <string name="admin" translatable="false">Admin</string>
     <string name="masuk">Masuk</string>
-    <string name="password">Password</string>
     <string name="silakan_masuk_untuk_melanjutkan">Silakan masuk untuk melanjutkan</string>
     <string name="password_must">Password harus di isi</string>
-    <string name="email" translatable="false">Email</string>
     <string name="email_must">Email harus di isi</string>
     <string name="email_password_must">Email dan Password harus di isi</string>
     <string name="wrong__password">Password salah</string>
     <string name="email_not_found">Email tidak ada</string>
-    <string name="login">Login</string>
+    <string name="login">Masuk</string>
     <string name="berhasil">Berhasil</string>
+    <string name="tahun">Tahun</string>
+    <string name="succadd">Berhasil di tambahkan</string>
+    <string name="bulan">Bulan</string>
+    <string name="succacalculate">Berhasil di hitung</string>
     <string name="kabupaten_sumenep">Kabupaten Sumenep</string>
-    <string-array name="data_title_menu_forecast">
-        <item>@string/menu_perhitungan</item>
-        <item>@string/menu_evaluasi</item>
-        <item>@string/menu_grafik</item>
-        <item>@string/menu_peramalan</item>
-    </string-array>
-    <string-array name="data_sub_title_menu_forecast">
-        <item>@string/sub_menu_perhitungan</item>
-        <item>@string/sub_menu_evaluasi</item>
-        <item>@string/sub_menu_grafik</item>
-        <item>@string/sub_menu_peramalan</item>
-    </string-array>
-    <array name="data_ic_forecast">
-        <item>@drawable/ic_hitung_manual</item>
-        <item>@drawable/ic_eval</item>
-        <item>@drawable/ic_grafik</item>
-        <item>@drawable/ic_ramal_masa</item>
-    </array>
-
-
-
-    <string-array name="data_title_settings">
-        <item>@string/ganti_bahasa</item>
-        <item>@string/tentang_aplikasi</item>
-        <item>@string/keluar</item>
-    </string-array>
-    <string-array name="data_sub_title_settings">
-        <item>@string/languange_change</item>
-        <item>@string/info_summary</item>
-        <item>@string/logout_summary</item>
-    </string-array>
-    <array name="data_ic_settings">
-        <item>@drawable/ic_translate</item>
-        <item>@drawable/ic_info_app</item>
-        <item>@drawable/ic_logout</item>
-
-    </array>
 </resources>

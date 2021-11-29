@@ -105,9 +105,10 @@ class AuthViewModel : ViewModel() {
                     val email=jsonUserObject["email"].toString()
                     val pass=jsonUserObject["password"].toString()
                     val dataUserItem= DataUserItem(
+                        pass,
                         iduser,
-                        email,
-                        pass
+                        email
+
                     )
                     listItems.add(dataUserItem)
                     listDataLogin.postValue(listItems)

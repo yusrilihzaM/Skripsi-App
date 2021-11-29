@@ -12,13 +12,8 @@
     <color name="white">#FFFFFFFF</color>
     <color name="red">#E84118</color>
     <color name="green">#4CD137</color>
-    <color name="violet">#8C7AE6</color>
     <color name="blue">#407BFF</color>
     <color name="yellow">#F1C40F</color>
-    <color name="silver">#bdc3c7</color>
-    <color name="white_300">#F5F5F5</color>
     <color name="shimmer_color">#ced6e0</color>
     <color name="grey_light1">#F5F5F5</color>
-    <color name="grey_light2">#F3F3F3</color>
-    <color name="akun">#E6A919</color>
 </resources>

@@ -5,14 +5,11 @@
     <string name="masukan_jumlah_periode">Masukan jumlah periode bulan</string>
     <string name="titlef_forecast_future">Ramal Periode Masa Depan</string>
     <string name="fail_future">Belum Meramal Periode Masa Depan, Model Peramalan Belum Di Hitung</string>
-    <string name="key_localization">key_localization</string>
-    <string name="password">Password</string>
-    <string name="username_must">Username harus di isi</string>
-    <string name="username_password_must">Username dan Password harus di isi</string>
+    <string name="password" translatable="false">Password</string>
     <string name="email_must">Email harus di isi</string>
     <string name="email_password_must">Email dan Password harus di isi</string>
     <string name="wrong__password">Password salah</string>
     <string name="email_not_found">Email tidak ada</string>
     <string name="login">Login</string>
-    <string name="fail_login">Masuk gagal</string>
+    <string name="kabupaten_sumenep">Kabupaten Sumenep</string>
 </resources>

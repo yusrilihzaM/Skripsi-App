@@ -68,7 +68,7 @@
 
         android:fontFamily="@font/poppins"
         android:lineSpacingExtra="-5sp"
-        android:text="Kabupaten Sumenep"
+        android:text="@string/kabupaten_sumenep"
         android:textColor="@color/white"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
