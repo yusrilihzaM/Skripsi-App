@@ -10,8 +10,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.thecode.aestheticdialogs.*
 import com.yusril.skripsi_app.R
 import com.yusril.skripsi_app.databinding.ActivityForecastFutureBinding
-import com.yusril.skripsi_app.ui.calculate.ViewModel.CalculateVIewModel
-import com.yusril.skripsi_app.ui.calculate.activity.CalculateActivity
+import com.yusril.skripsi_app.viewmodel.CalculateVIewModel
 import com.yusril.skripsi_app.ui.forecastFuture.viewmodel.ForecastFutureModel
 import com.yusril.skripsi_app.ui.main.MainActivity
 
@@ -39,6 +38,7 @@ class ForecastFutureActivity : AppCompatActivity(){
                 binding.status.setBackgroundResource(R.color.yellow)
                 binding.status.text=getString(R.string.modeldone)
                 binding.btnSubmit.setOnClickListener {
+                    binding.btnSubmit.startAnimation()
                     if(binding.edtPeriod.text.isEmpty()){
                         binding.edtPeriod.error = getString(R.string.edtperiodmust)
                     }else{
@@ -59,6 +59,7 @@ class ForecastFutureActivity : AppCompatActivity(){
                                     getString(R.string.fail_future_forecast)
                                 )
                             }
+                            binding.btnSubmit.revertAnimation()
                         })
                     }
 

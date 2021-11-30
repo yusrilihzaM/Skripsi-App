@@ -44,6 +44,7 @@ class EditTouristDataTypeMainActivity : AppCompatActivity() {
         supportActionBar?.title=touristDataType
         binding.edtDataTouristType.setText(touristDataType)
         binding.btnSubmit.setOnClickListener {
+            binding.btnSubmit.startAnimation()
             if (binding.edtDataTouristType.text.isEmpty() ){
                 binding.edtDataTouristType.error = getString(R.string.alert_tempat_wisata)
                 status(true,getString(R.string.alert_tempat_wisata))
@@ -150,6 +151,7 @@ class EditTouristDataTypeMainActivity : AppCompatActivity() {
                 .setOnClickListener(object : OnDialogClickListener {
                     override fun onClick(dialog: AestheticDialog.Builder) {
                         dialog.dismiss()
+                        binding.btnSubmit.revertAnimation()
                         startActivity(Intent(this@EditTouristDataTypeMainActivity, TouristDataTypeActivity::class.java))
                         finish()
                         //actions...
@@ -167,6 +169,7 @@ class EditTouristDataTypeMainActivity : AppCompatActivity() {
                 .setOnClickListener(object : OnDialogClickListener {
                     override fun onClick(dialog: AestheticDialog.Builder) {
                         dialog.dismiss()
+                        binding.btnSubmit.revertAnimation()
                         //actions...
                     }
                 })

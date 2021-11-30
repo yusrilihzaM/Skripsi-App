@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="@dimen/size_24"
     >
@@ -25,8 +26,8 @@
             <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
                 android:id="@+id/btn_login"
                 android:layout_width="match_parent"
-                android:layout_height="65dp"
-                android:layout_marginTop="@dimen/size_18"
+                android:layout_height="55dp"
+                android:layout_marginTop="@dimen/size_32"
                 android:background="@drawable/bg_btn"
                 android:foreground="?android:attr/selectableItemBackground"
                 android:text="@string/masuk"
@@ -43,12 +44,13 @@
         <EditText
             android:id="@+id/edt_password"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="55dp"
             android:layout_marginTop="@dimen/size_16"
             android:background="@drawable/bg_edt"
             android:hint="@string/password"
             android:inputType="textPassword"
             android:padding="@dimen/size_16"
+            android:textCursorDrawable="@drawable/color_cursor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
@@ -59,12 +61,13 @@
         <EditText
             android:id="@+id/edt_email"
             android:layout_width="match_parent"
-            android:layout_height="65dp"
+            android:layout_height="55dp"
             android:layout_marginTop="@dimen/size_16"
             android:background="@drawable/bg_edt"
             android:hint="@string/email"
             android:inputType="textEmailAddress"
             android:padding="@dimen/size_16"
+            android:textCursorDrawable="@drawable/color_cursor"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"

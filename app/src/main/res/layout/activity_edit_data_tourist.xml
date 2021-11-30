@@ -76,8 +76,8 @@
             />
         <ImageButton
             android:id="@+id/btn_year_month"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
             android:padding="@dimen/size_32"
             android:layout_gravity="center"
             android:layout_marginEnd="@dimen/size_16"
@@ -124,29 +124,20 @@
         app:layout_constraintTop_toBottomOf="@+id/tv_data_tourist"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageButton
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
         android:id="@+id/btn_submit"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
         android:layout_margin="@dimen/size_16"
         android:layout_marginBottom="@dimen/size_32"
+        android:text="@string/simpan"
+        android:textColor="@color/white"
         android:background="@drawable/bg_btn_green"
-        android:foreground="?android:attr/selectableItemBackground"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        app:spinning_bar_color="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_jumlah"
         app:layout_constraintVertical_bias="0.898" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:text="@string/simpan"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_submit"
-        app:layout_constraintEnd_toEndOf="@+id/btn_submit"
-        app:layout_constraintStart_toStartOf="@+id/btn_submit"
-        app:layout_constraintTop_toTopOf="@+id/btn_submit" />
 </androidx.constraintlayout.widget.ConstraintLayout>

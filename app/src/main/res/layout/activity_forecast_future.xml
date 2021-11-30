@@ -66,29 +66,21 @@
         app:layout_constraintTop_toBottomOf="@+id/status"
         app:layout_constraintVertical_bias="0.0" />
 
-    <ImageButton
+    <br.com.simplepass.loadingbutton.customViews.CircularProgressButton
         android:id="@+id/btn_submit"
         android:layout_width="match_parent"
-        android:layout_height="65dp"
+        android:layout_height="55dp"
         android:layout_margin="@dimen/size_16"
         android:layout_marginBottom="@dimen/size_32"
+        android:text="@string/mulai_ramal_periode_masa_depan"
         android:background="@drawable/bg_btn_green"
-        android:foreground="?android:attr/selectableItemBackground"
+        android:textColor="@color/white"
+        android:foreground="?android:attr/selectableItemBackgroundBorderless"
+        app:spinning_bar_color="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/edt_period"
         app:layout_constraintVertical_bias="0.066" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/poppins"
-        android:text="@string/mulai_ramal_periode_masa_depan"
-        android:textColor="@color/white"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="@+id/btn_submit"
-        app:layout_constraintEnd_toEndOf="@+id/btn_submit"
-        app:layout_constraintStart_toStartOf="@+id/btn_submit"
-        app:layout_constraintTop_toTopOf="@+id/btn_submit" />
 </androidx.constraintlayout.widget.ConstraintLayout>

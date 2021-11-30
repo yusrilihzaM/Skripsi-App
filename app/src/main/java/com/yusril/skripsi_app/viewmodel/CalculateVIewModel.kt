@@ -1,4 +1,4 @@
-package com.yusril.skripsi_app.ui.calculate.ViewModel
+package com.yusril.skripsi_app.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.LiveData
@@ -20,9 +20,13 @@ class CalculateVIewModel: ViewModel() {
     var statusCalculate = MutableLiveData<ArrayList<Status>>()
     var statusCountData = MutableLiveData<ArrayList<CountData>>()
     fun setCalculate(){
+        val DEFAULT_TIMEOUT = 20 * 1000;
         val client = AsyncHttpClient()
         val listItems = ArrayList<Status>()
         val url= URL_CALCULATE
+//        val url="http://api.myusrilm.educationhost.cloud/api/calculate"
+        client.responseTimeout=DEFAULT_TIMEOUT
+        client.setTimeout(DEFAULT_TIMEOUT);
         client.get(url,object : AsyncHttpResponseHandler(){
             override fun onSuccess(
                 statusCode: Int,
@@ -31,6 +35,7 @@ class CalculateVIewModel: ViewModel() {
             ) {
                 try {
                     val result = String(responseBody)
+                    Log.d("setCalculate", result.toString())
                     val jsonObject = JSONObject(result)
                     val status_data:Boolean= jsonObject["status"] as Boolean
                     val status=Status(

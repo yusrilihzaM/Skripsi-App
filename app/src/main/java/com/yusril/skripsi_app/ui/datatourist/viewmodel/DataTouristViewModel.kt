@@ -208,8 +208,8 @@ class DataTouristViewModel: ViewModel() {
         params.put("month", month)
         params.put("year", year)
         params.put("id_tourist_data_type", id_tourist_data_type)
-        val url= "$URL_REST_BASE$URL_DATA_TOURIST/delete"
-        client.post(url,params,object :AsyncHttpResponseHandler(){
+        val url= "$URL_REST_BASE$URL_DATA_TOURIST"
+        client.put(url,params,object :AsyncHttpResponseHandler(){
             override fun onSuccess(
                 statusCode: Int,
                 headers: Array<out Header>?,
@@ -255,7 +255,7 @@ class DataTouristViewModel: ViewModel() {
         params.put("id_data_pengunjung", id_data_pengunjung)
         val listItems = ArrayList<Status>()
         val url= "$URL_REST_BASE$URL_DATA_TOURIST/delete"
-        client.put("http://192.168.100.6/skripsi-rest-forecasting/api/tourist/delete",params,object :AsyncHttpResponseHandler(){
+        client.put(url,params,object :AsyncHttpResponseHandler(){
             override fun onSuccess(
                 statusCode: Int,
                 headers: Array<out Header>?,

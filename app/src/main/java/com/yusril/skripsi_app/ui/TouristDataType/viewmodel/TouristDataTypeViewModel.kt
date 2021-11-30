@@ -177,7 +177,7 @@ class TouristDataTypeViewModel: ViewModel() {
         val params = RequestParams()
         params.put("id_tourist_data_type", id_tourist_data_type)
         val listItems = ArrayList<Status>()
-        client.put("http://192.168.100.6/skripsi-rest-forecasting/api/TouristDataType/delete",params,object :AsyncHttpResponseHandler(){
+        client.put(URL_DATA_TOURIST_TYPE_PLACE,params,object :AsyncHttpResponseHandler(){
             override fun onSuccess(
                 statusCode: Int,
                 headers: Array<out Header>?,

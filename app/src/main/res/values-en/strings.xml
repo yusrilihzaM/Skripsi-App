@@ -10,8 +10,8 @@
     <string name="akun">Account</string>
     <string name="hi_selamat_datang">Selamat Datang</string>
     <string name="menu_data">Tourist Data</string>
-    <string name="place_data">Tourist Data</string>
-    <string name="data_tempat_wisata">Tourist Data</string>
+    <string name="place_data">Tourist Attraction Data</string>
+    <string name="data_tempat_wisata">Tourist Attraction Data</string>
     <string name="tambah_data">Add data</string>
     <string name="hapus_data">Delete Data</string>
     <string name="add_new_place">Add tourist attractions</string>

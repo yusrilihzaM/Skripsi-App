@@ -58,7 +58,7 @@ class AddDataTouristActivity : AppCompatActivity() {
             rackMonthPicker.show();
         }
         binding.btnSubmit.setOnClickListener {
-
+            binding.btnSubmit.startAnimation()
             if (binding.edtTahun.text.isEmpty() and binding.edtJumlah.text.isEmpty()){
                 binding.edtTahun.error = getString(R.string.monthyearmust)
                 binding.edtJumlah.error = getString(R.string.touristmust)
@@ -121,6 +121,7 @@ class AddDataTouristActivity : AppCompatActivity() {
                 .setOnClickListener(object : OnDialogClickListener {
                     override fun onClick(dialog: AestheticDialog.Builder) {
                         dialog.dismiss()
+                        binding.btnSubmit.revertAnimation()
                         pindah()
                         finish()
                         //actions...
@@ -138,6 +139,7 @@ class AddDataTouristActivity : AppCompatActivity() {
                 .setOnClickListener(object : OnDialogClickListener {
                     override fun onClick(dialog: AestheticDialog.Builder) {
                         dialog.dismiss()
+                        binding.btnSubmit.revertAnimation()
                         //actions...
                     }
                 })

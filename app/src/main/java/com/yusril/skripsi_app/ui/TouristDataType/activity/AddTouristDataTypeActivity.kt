@@ -30,6 +30,7 @@ class AddTouristDataTypeActivity : AppCompatActivity() {
         setContentView(binding.root)
         touristDataTypeViewModel= ViewModelProvider(this, ViewModelProvider.NewInstanceFactory()).get(TouristDataTypeViewModel::class.java)
         binding.btnSubmit.setOnClickListener {
+            binding.btnSubmit.startAnimation()
             if (binding.edtDataTouristType.text.isEmpty() ){
                 binding.edtDataTouristType.error = getString(R.string.alert_tempat_wisata)
                 status(true,getString(R.string.alert_tempat_wisata))
@@ -49,7 +50,7 @@ class AddTouristDataTypeActivity : AppCompatActivity() {
                             .setOnClickListener(object : OnDialogClickListener {
                                 override fun onClick(dialog: AestheticDialog.Builder) {
                                     dialog.dismiss()
-
+                                    binding.btnSubmit.revertAnimation()
                                     startActivity(Intent(this@AddTouristDataTypeActivity, TouristDataTypeActivity::class.java))
                                     finish()
                                     //actions...

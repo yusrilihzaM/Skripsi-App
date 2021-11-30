@@ -11,12 +11,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.thecode.aestheticdialogs.*
 import com.yusril.skripsi_app.R
 import com.yusril.skripsi_app.databinding.ActivityCalculateBinding
-import com.yusril.skripsi_app.databinding.ActivityDataTouristAttractionBinding
-import com.yusril.skripsi_app.response.DataTouristTypeItem
-import com.yusril.skripsi_app.ui.calculate.ViewModel.CalculateVIewModel
-import com.yusril.skripsi_app.ui.datatourist.activity.AddDataTouristActivity
-import com.yusril.skripsi_app.ui.datatourist.activity.DataTouristActivity
-import com.yusril.skripsi_app.ui.datatourist.viewmodel.DataTouristViewModel
+import com.yusril.skripsi_app.viewmodel.CalculateVIewModel
 import com.yusril.skripsi_app.ui.main.MainActivity
 
 class CalculateActivity : AppCompatActivity() {
@@ -49,6 +44,7 @@ class CalculateActivity : AppCompatActivity() {
         })
 
         binding.btnSubmit.setOnClickListener {
+            binding.btnSubmit.startAnimation()
             calculateVIewModel.setCalculate()
             calculateVIewModel.getStatusCalculate().observe(this,{data->
                 if (data[0].status){
@@ -62,6 +58,7 @@ class CalculateActivity : AppCompatActivity() {
                         ,getString(R.string.hitung_model_peramalan)
                         ,getString(R.string.fail))
                 }
+                binding.btnSubmit.revertAnimation()
             })
         }
     }
